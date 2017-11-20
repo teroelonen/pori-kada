@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/mstile-150x150.png"/>
+            <square150x150logo src="/sites/all/themes/custom/kada/favicons/mstile-150x150.png?v=bOLk5oLyn7"/>
             <TileColor>#da532c</TileColor>
         </tile>
     </msapplication>

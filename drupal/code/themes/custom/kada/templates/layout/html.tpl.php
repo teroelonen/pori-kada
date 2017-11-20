@@ -62,15 +62,16 @@
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/apple-touch-icon.png?v=M4yYbYA4bq">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-32x32.png?v=M4yYbYA4bq">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-16x16.png?v=M4yYbYA4bq">
-    <link rel="shortcut icon" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon.ico?v=M4yYbYA4bq">
-    <link rel="manifest" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/manifest.json">
-    <link rel="mask-icon" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/safari-pinned-tab.svg" color="#ec1c24">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/mstile-144x144.png?v=M4yYbYA4bq">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/apple-touch-icon.png?v=bOLk5oLyn7"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/favicon-32x32.png?v=bOLk5oLyn7"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/favicon-16x16.png?v=bOLk5oLyn7"/>
+    <link rel="manifest" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/manifest.json?v=bOLk5oLyn7"/>
+    <link rel="mask-icon" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/safari-pinned-tab.svg?v=bOLk5oLyn7" color="#ec1c24"/>
+    <link rel="shortcut icon" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/favicon.ico?v=bOLk5oLyn7"/>
+    <meta name="msapplication-TileColor" content="#da532c"/>
+    <meta name="msapplication-TileImage" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/mstile-144x144.png?v=bOLk5oLyn7"/>
+    <meta name="msapplication-config" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/favicons/browserconfig.xml?v=bOLk5oLyn7"/>
+    <meta name="theme-color" content="#ffffff"/>
 
     <meta property="og:image" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/image_src.png" /> <!-- @todo create a 200x200 png file -->
 
