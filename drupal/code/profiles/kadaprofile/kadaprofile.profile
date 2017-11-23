@@ -177,3 +177,15 @@ function kadaprofile_update_7112() {
   module_disable($modules, $enable_dependencies);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enable Google Analytics
+ */
+function kadaprofile_update_7113() {
+  $modules = array('googleanalytics');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
