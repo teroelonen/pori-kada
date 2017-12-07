@@ -55,11 +55,12 @@ function pori_some_content_ds_layout_settings_info_alter(&$data) {
 }
 
 /**
- * Implements hook_field_group_info_alter().
+ * Implements hook_feeds_importer_default_alter().
  */
-function pori_some_content_field_group_info_alter(&$data) {
-  if (isset($data['group_top|node|social_media_update|current'])) {
-    unset($data['group_top|node|social_media_update|current']);
+function pori_some_content_feeds_importer_default_alter(&$data) {
+  if (isset($data['kada_tweets_json'])) {
+    $data['kada_tweets_json']->config['fetcher']['config']['consumer_key'] = 'c4tXoNVMm7dad9Ay9gzerNoCE'; /* WAS: 'consumerkey' */
+    $data['kada_tweets_json']->config['fetcher']['config']['consumer_secret'] = 'gPd6YduQ6SeeKxjkLHahF7gBo8wckhdGBInkYsggfuYMVoqWj9'; /* WAS: 'consumersecret' */
   }
 }
 
