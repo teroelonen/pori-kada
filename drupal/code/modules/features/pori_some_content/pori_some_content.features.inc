@@ -59,8 +59,8 @@ function pori_some_content_ds_layout_settings_info_alter(&$data) {
  */
 function pori_some_content_feeds_importer_default_alter(&$data) {
   if (isset($data['kada_tweets_json'])) {
-    $data['kada_tweets_json']->config['fetcher']['config']['consumer_key'] = 'c4tXoNVMm7dad9Ay9gzerNoCE'; /* WAS: 'consumerkey' */
-    $data['kada_tweets_json']->config['fetcher']['config']['consumer_secret'] = 'gPd6YduQ6SeeKxjkLHahF7gBo8wckhdGBInkYsggfuYMVoqWj9'; /* WAS: 'consumersecret' */
+    $data['kada_tweets_json']->config['fetcher']['config']['consumer_key'] = 'lUZD0cSQRfyj3HW9tIFXfA5Se'; /* WAS: 'consumerkey' */
+    $data['kada_tweets_json']->config['fetcher']['config']['consumer_secret'] = 'm7KDPVK3OxBP5DYvv3DFDcquxdmPAQhJYxqAyDskE4ZTTCZ0xL'; /* WAS: 'consumersecret' */
   }
 }
 

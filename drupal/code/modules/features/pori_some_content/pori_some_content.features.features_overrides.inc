@@ -50,8 +50,8 @@ function pori_some_content_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|social_media_update|current.settings|wrappers|main"] = 'div';
 
   // Exported overrides for: feeds_importer
-  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_key"] = 'c4tXoNVMm7dad9Ay9gzerNoCE';
-  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_secret"] = 'gPd6YduQ6SeeKxjkLHahF7gBo8wckhdGBInkYsggfuYMVoqWj9';
+  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_key"] = 'lUZD0cSQRfyj3HW9tIFXfA5Se';
+  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_secret"] = 'm7KDPVK3OxBP5DYvv3DFDcquxdmPAQhJYxqAyDskE4ZTTCZ0xL';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-social_media_update-body.display|current|weight"] = 3;
