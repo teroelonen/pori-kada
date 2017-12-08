@@ -49,8 +49,9 @@ function pori_some_content_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|social_media_update|current.settings|wrappers|header"] = 'div';
   $overrides["ds_layout_settings.node|social_media_update|current.settings|wrappers|main"] = 'div';
 
-  // Exported overrides for: field_group
-  $overrides["field_group.group_top|node|social_media_update|current.group_top|node|social_media_update|current"]["DELETED"] = TRUE;
+  // Exported overrides for: feeds_importer
+  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_key"] = 'lUZD0cSQRfyj3HW9tIFXfA5Se';
+  $overrides["feeds_importer.kada_tweets_json.config|fetcher|config|consumer_secret"] = 'm7KDPVK3OxBP5DYvv3DFDcquxdmPAQhJYxqAyDskE4ZTTCZ0xL';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-social_media_update-body.display|current|weight"] = 3;
