@@ -28,12 +28,46 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Valitse luokittelun ja/tai kohderyhmien alta haluamasi ja klikkaa "Käytä".',
+          'format' => 'wysiwyg',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Edistyneet valinnat',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_keywords_et_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'liftup-box liftup-box--attraction-item';
@@ -137,7 +171,6 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['filters']['field_keywords_et_tid']['table'] = 'field_data_field_keywords_et';
   $handler->display->display_options['filters']['field_keywords_et_tid']['field'] = 'field_keywords_et_tid';
   $handler->display->display_options['filters']['field_keywords_et_tid']['operator'] = 'and';
-  $handler->display->display_options['filters']['field_keywords_et_tid']['value'] = '';
   $handler->display->display_options['filters']['field_keywords_et_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['operator_id'] = 'field_keywords_et_tid_op';
   $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['operator'] = 'field_keywords_et_tid_op';
@@ -153,6 +186,7 @@ function pori_attraction_feature_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  $handler->display->display_options['filters']['field_keywords_et_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_keywords_et_tid']['vocabulary'] = 'keywords';
 
   /* Display: List widget */
@@ -166,6 +200,8 @@ function pori_attraction_feature_views_default_views() {
     t('Järjestele'),
     t('Nou'),
     t('Las'),
+    t('Valitse luokittelun ja/tai kohderyhmien alta haluamasi ja klikkaa "Käytä".'),
+    t('Edistyneet valinnat'),
     t('Translations'),
     t('<div class="attraction-list--item__container">
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
