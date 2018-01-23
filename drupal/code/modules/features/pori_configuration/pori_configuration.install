@@ -27,3 +27,10 @@ function pori_configuration_update_7102(&$sandbox) {
 function pori_configuration_update_7103(&$sandbox) {
   module_enable(array('pori_contact_information_feature'));
 }
+
+/**
+ * Enable LDAP integration feature.
+ */
+function pori_configuration_update_7104(&$sandbox) {
+  module_enable(array('pori_ldap_feature'));
+}

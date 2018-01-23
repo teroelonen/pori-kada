@@ -393,6 +393,9 @@ projects[jquery_update][subdir] = contrib
 projects[language_access][version] = 1.01
 projects[language_access][subdir] = contrib
 
+projects[ldap][version] = 2.3
+projects[ldap][subdir] = contrib
+
 projects[libraries][version] = 2.3
 projects[libraries][subdir] = contrib
 
