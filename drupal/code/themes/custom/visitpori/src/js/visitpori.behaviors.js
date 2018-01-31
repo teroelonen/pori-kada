@@ -168,6 +168,7 @@
             let elementOffset = $(element).offset().left;
             $(element).children('.menu').css('left', elementOffset + 'px');
             $(element).find('.menu:visible').children('.menu').css('left', elementOffset + 'px');
+            switchMainMenuBehavior(context);
           }
         };
 
