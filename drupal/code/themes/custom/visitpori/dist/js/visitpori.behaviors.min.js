@@ -149,6 +149,7 @@
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
             adjustWidth($(this));
+            setHorisontalPosition($(this));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             }
@@ -161,6 +162,15 @@
             adjustHeight($(this).parent('.menu'));
           }
         });
+
+        function setHorisontalPosition(element) {
+          if ($(window).width() >= '1025') {
+            let elementOffset = $(element).offset().left;
+            $(element).children('.menu').css('left', elementOffset + 'px');
+            $(element).find('.menu:visible').children('.menu').css('left', elementOffset + 'px');
+            switchMainMenuBehavior(context);
+          }
+        };
 
 
         function adjustWidth(elem) {
