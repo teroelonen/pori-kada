@@ -109,6 +109,8 @@ $aliases['stage'] = array(
   ),
 );
 
+$aliases['v.stage'] = $aliases['stage'];
+$aliases['v.stage']['uri'] = 'https://visitpori.stage.wunder.io';
 
 $aliases['prod'] = array(
   'uri' => 'https://beta.pori.fi',
@@ -128,3 +130,5 @@ $aliases['prod'] = array(
   ),
 );
 
+$aliases['v.prod'] = $aliases['stage'];
+$aliases['v.prod']['uri'] = 'https://www.visitpori.fi';
