@@ -5,3 +5,16 @@
  */
 
 include_once 'pori_configuration.features.inc';
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function pori_configuration_entity_info_alter(&$entity_info) {
+  $entity_info['taxonomy_term']['uri callback'] = 'pori_configuration_taxonomy_term_uri';
+}
+
+function pori_configuration_taxonomy_term_uri($term) {
+  if ($term->vid == 5) {
+    return array('path' => 'search/keywords/"' . $term->tid . '"');
+  }
+}
