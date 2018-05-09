@@ -928,6 +928,11 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-place-field_location']['display']['teaser']['weight'] = 35; /* WAS: 32 */
+    $data['node-place-field_location']['widget']['settings']['handler_settings']['google']['biasing'] = array(
+      'bounds' => '',
+      'components' => '',
+      'region' => '',
+    ); /* WAS: '' */
   }
   if (isset($data['node-place-field_main_image'])) {
     $data['node-place-field_main_image']['display']['live_results_search'] = array(
@@ -1113,6 +1118,39 @@ function pori_configuration_overrides_feature_locale_default_languages_alter(&$d
 }
 
 /**
+ * Implements hook_openlayers_maps_alter().
+ */
+function pori_configuration_overrides_feature_openlayers_maps_alter(&$data) {
+  if (isset($data['kada_location_input'])) {
+    $data['kada_location_input']->data['center']['initial']['centerpoint'] = '21.7273791, 61.4852033'; /* WAS: '22.270831921235335, 60.451800341324734' */
+    $data['kada_location_input']->data['layer_activated']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_default_scald_context_config_alter().
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
@@ -1190,19 +1228,19 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['field_bundle_settings_node__place']->value['extra_fields']['display']['domain']['teaser']['weight'] = 23; /* WAS: 19 */
   }
   if (isset($data['field_bundle_settings_scald_atom__image'])) {
-    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['small_liftup_banner'] = array(
-      'weight' => 0,
-      'visible' => TRUE,
-    ); /* WAS: '' */
-    $data['field_bundle_settings_scald_atom__image']->value['view_modes']['small_liftup_banner'] = array(
-      'custom_settings' => TRUE,
-    );
     $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['visible'] = TRUE; /* WAS: FALSE */
     $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['weight'] = 0; /* WAS: 1 */
     $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['visible'] = TRUE; /* WAS: FALSE */
     $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['weight'] = 0; /* WAS: 1 */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['small_liftup_banner'] = array(
+      'weight' => 0,
+      'visible' => TRUE,
+    ); /* WAS: '' */
     $data['field_bundle_settings_scald_atom__image']->value['view_modes']['content_250_wide'] = array(
       'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_scald_atom__image']->value['view_modes']['small_liftup_banner'] = array(
+      'custom_settings' => TRUE,
     ); /* WAS: '' */
   }
   if (isset($data['menu_block_20_expanded'])) {
@@ -1254,17 +1292,17 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
       'parseable' => TRUE,
       'formats' => array(),
     ); /* WAS: '' */
-    $data['scald_custom_contexts']->value['small_liftup_banner'] = array(
-      'name' => 'small_liftup_banner',
-      'title' => 'Small liftup banner',
+    $data['scald_custom_contexts']->value['page_carousel'] = array(
+      'name' => 'page_carousel',
+      'title' => 'Page carousel',
       'description' => '',
       'render_language' => 'XHTML',
       'parseable' => TRUE,
       'formats' => array(),
     ); /* WAS: '' */
-    $data['scald_custom_contexts']->value['page_carousel'] = array(
-      'name' => 'page_carousel',
-      'title' => 'Page carousel',
+    $data['scald_custom_contexts']->value['small_liftup_banner'] = array(
+      'name' => 'small_liftup_banner',
+      'title' => 'Small liftup banner',
       'description' => '',
       'render_language' => 'XHTML',
       'parseable' => TRUE,

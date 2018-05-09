@@ -743,6 +743,11 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-place-field_location.display|teaser|weight"] = 35;
+  $overrides["field_instance.node-place-field_location.widget|settings|handler_settings|google|biasing"] = array(
+    'bounds' => '',
+    'components' => '',
+    'region' => '',
+  );
   $overrides["field_instance.node-place-field_main_image.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -869,6 +874,33 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: language
   $overrides["language.sv.enabled"] = 1;
 
+  // Exported overrides for: openlayers_maps
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|centerpoint"] = '21.7273791, 61.4852033';
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data_single"] = 0;
+
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';
   $overrides["scald_context_config.content_half.player|image|settings|caption"] = '';
@@ -927,19 +959,19 @@ function pori_configuration_overrides_feature_features_override_default_override
     'custom_settings' => FALSE,
   );
   $overrides["variable.field_bundle_settings_node__place.value|extra_fields|display|domain|teaser|weight"] = 23;
-  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|small_liftup_banner"] = array(
-    'weight' => 0,
-    'visible' => TRUE,
-  );
-  $overrides["variable.field_bundle_settings_scald_atom__image.value|view_modes|small_liftup_banner"] = array(
-    'custom_settings' => TRUE,
-  );
   $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_full|visible"] = TRUE;
   $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_full|weight"] = 0;
   $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_half|visible"] = TRUE;
   $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_half|weight"] = 0;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|small_liftup_banner"] = array(
+    'weight' => 0,
+    'visible' => TRUE,
+  );
   $overrides["variable.field_bundle_settings_scald_atom__image.value|view_modes|content_250_wide"] = array(
     'custom_settings' => FALSE,
+  );
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|view_modes|small_liftup_banner"] = array(
+    'custom_settings' => TRUE,
   );
   $overrides["variable.menu_block_20_expanded.value"] = 1;
   $overrides["variable.menu_block_21_expanded.value"] = 1;
@@ -969,17 +1001,17 @@ function pori_configuration_overrides_feature_features_override_default_override
     'parseable' => TRUE,
     'formats' => array(),
   );
-  $overrides["variable.scald_custom_contexts.value|small_liftup_banner"] = array(
-    'name' => 'small_liftup_banner',
-    'title' => 'Small liftup banner',
+  $overrides["variable.scald_custom_contexts.value|page_carousel"] = array(
+    'name' => 'page_carousel',
+    'title' => 'Page carousel',
     'description' => '',
     'render_language' => 'XHTML',
     'parseable' => TRUE,
     'formats' => array(),
   );
-  $overrides["variable.scald_custom_contexts.value|page_carousel"] = array(
-    'name' => 'page_carousel',
-    'title' => 'Page carousel',
+  $overrides["variable.scald_custom_contexts.value|small_liftup_banner"] = array(
+    'name' => 'small_liftup_banner',
+    'title' => 'Small liftup banner',
     'description' => '',
     'render_language' => 'XHTML',
     'parseable' => TRUE,
