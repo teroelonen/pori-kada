@@ -9,6 +9,10 @@ include_once 'kada_geo_feature.features.inc';
  * Implementation of hook_form_alter()
  */
 function kada_geo_feature_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'views_ui_preview_form') {
+    // Fixes Views preview crashing when there is map displayed.
+    openlayers_include();
+  }
   if ($form_id == 'views_exposed_form') {
     $view = $form_state['view'];
     $view_id = $view->name;
