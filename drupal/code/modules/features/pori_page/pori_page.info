@@ -1,0 +1,11 @@
+name = Pori Page
+description = All that needs to be added to KADA-page should come here. Alterations to KADA-Page should be in some feature override.
+core = 7.x
+package = Pori
+version = 7.x-1.0
+dependencies[] = features
+dependencies[] = kada_page_feature
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_places_title
+features[field_instance][] = node-page-field_places_title
