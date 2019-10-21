@@ -81,7 +81,8 @@ $aliases['local'] = array(
   'root' => '/vagrant/drupal/web',
   'remote-host' => 'local.pori.fi',
   'remote-user' => 'vagrant',
-  'ssh-options' => '-i ' . $key,
+  # @see: https://github.com/drush-ops/drush/pull/546#issuecomment-258632119
+  'ssh-options' => '-o PasswordAuthentication=no',
   'path-aliases' => array(
     '%files' => '/vagrant/drupal/files',
     '%dump-dir' => '/home/vagrant',
