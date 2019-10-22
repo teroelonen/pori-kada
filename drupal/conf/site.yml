@@ -62,7 +62,7 @@ default:
       - cleanup
       - drush: en devel stage_file_proxy -y
       - drush: cc drush
-      - drush: uli
+      - drush: -l @local.pori.fi uli
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
