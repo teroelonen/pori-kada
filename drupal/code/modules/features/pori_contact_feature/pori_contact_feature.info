@@ -21,6 +21,7 @@ features[variable][] = comment_subject_field_contact_card
 features[variable][] = diff_enable_revisions_page_node_contact_card
 features[variable][] = diff_show_preview_changes_node_contact_card
 features[variable][] = diff_view_mode_preview_node_contact_card
+features[variable][] = field_bundle_settings_node__contact_card
 features[variable][] = language_content_type_contact_card
 features[variable][] = menu_options_contact_card
 features[variable][] = menu_parent_contact_card
