@@ -20,7 +20,7 @@ Synchronise local database from production
 
 or from dumpfile
 
-`drush sql-cli < /vagrant/dump.sql`
+`drush @pori-kada.local sql-cli < /vagrant/dump.sql`
 
 Update the site
 
@@ -42,7 +42,7 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
-Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
+Tip: You can use drush aliases to execute drush commands without logging into the servers or vagrant box. For example `drush @pori-kada.local cc css-js`.
 
 ### Folder structure
 
