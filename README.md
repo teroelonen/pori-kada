@@ -14,9 +14,9 @@ cd /vagrant/drupal
 ./build.sh new
 ```
 
-Synchronise the database from production
+Synchronise local database from production
 
-`cd .. && ./syncdb.sh`
+`/vagrant/drupal/syncdb_local.sh prod`
 
 or from dumpfile
 
