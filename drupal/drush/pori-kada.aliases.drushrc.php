@@ -79,6 +79,7 @@ $aliases['local'] = array(
   'site' => 'pori-kada',
   'env' => 'vagrant',
   'root' => '/vagrant/drupal/web',
+  'uri' => 'https://local.pori.fi',
   'remote-host' => 'local.pori.fi',
   'remote-user' => 'vagrant',
   # @see: https://github.com/drush-ops/drush/pull/546#issuecomment-258632119
