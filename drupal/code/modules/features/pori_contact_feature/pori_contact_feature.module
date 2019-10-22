@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Pori Contact feature.
+ */
+
+include_once 'pori_contact_feature.features.inc';
