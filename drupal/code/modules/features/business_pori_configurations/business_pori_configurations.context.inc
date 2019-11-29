@@ -275,6 +275,12 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'after_content',
           'weight' => '-9',
         ),
+        'views-pori_presentation_liftup-block' => array(
+          'module' => 'views',
+          'delta' => 'pori_presentation_liftup-block',
+          'region' => 'after_content',
+          'weight' => '-9',
+        ),
         'quicktabs-feed_tabs' => array(
           'module' => 'quicktabs',
           'delta' => 'feed_tabs',
