@@ -84,12 +84,6 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-kada_section_footer-block_1' => array(
-          'module' => 'views',
-          'delta' => 'kada_section_footer-block_1',
-          'region' => 'footer',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
