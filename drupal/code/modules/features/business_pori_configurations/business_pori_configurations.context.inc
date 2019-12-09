@@ -345,9 +345,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-9',
         ),
-        'views-kada_section_footer-block_1' => array(
-          'module' => 'views',
-          'delta' => 'kada_section_footer-block_1',
+        'menu_block-47' => array(
+          'module' => 'menu_block',
+          'delta' => '47',
           'region' => 'footer',
           'weight' => '-8',
         ),
@@ -394,9 +394,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'views-kada_section_footer-block_1' => array(
-          'module' => 'views',
-          'delta' => 'kada_section_footer-block_1',
+        'menu_block-44' => array(
+          'module' => 'menu_block',
+          'delta' => '44',
           'region' => 'footer',
           'weight' => '-9',
         ),
