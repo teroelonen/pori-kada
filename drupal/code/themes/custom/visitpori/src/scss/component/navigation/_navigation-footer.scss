@@ -136,9 +136,7 @@
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       border-bottom: 0 none;
-      font-family: $bergen-text;
-      font-size: 1.2rem;
-      font-weight: normal;
+      font-size: 1.5rem;
       text-transform: none;
       width: 20%;
     }
@@ -156,6 +154,13 @@
         }
       }
     }
+    > a {
+      font-weight: bold;
+      &:hover::after,
+      &:focus::after {
+        display: none;
+      }
+    }
 
     &:hover,
     &:focus,
@@ -163,7 +168,6 @@
     &.is-active-trail {
       background-color: $secondary-color;
       border-color: $primary-color;
-      font-weight: normal;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
