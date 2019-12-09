@@ -148,7 +148,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_44_depth';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['menu_block_44_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -337,7 +337,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_47_depth';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['menu_block_47_depth'] = $strongarm;
 
   $strongarm = new stdClass();
