@@ -61,6 +61,17 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
+### Theming
+
+Quickstart:
+
+1. Install gulp globally: `npm install --global gulp-cli`.
+2. Go to theme folder: `cd /vagrant/drupal/code/themes/custom/<yourtheme>`.
+3. Install Node packages: `npm install`.
+4. Run `gulp sass` or `gulp sass --production` to build the assets.
+
+Theming readme: `drupal/code/themes/custom/<yourtheme>/README.md`.
+
 ### Tips
 
 - You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
