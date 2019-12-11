@@ -121,7 +121,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 34,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -235,7 +235,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 35,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -316,7 +316,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -521,7 +521,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'person_card_with_skills' => array(
         'label' => 'inline',
@@ -644,7 +644,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 48,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -766,7 +766,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -889,7 +889,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -1010,7 +1010,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 47,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -1121,7 +1121,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 4,
+        'weight' => 13,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -1299,7 +1299,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 46,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -1370,7 +1370,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -1493,7 +1493,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -1622,7 +1622,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 45,
       ),
       'person_card_with_skills' => array(
         'label' => 'inline',
@@ -1711,7 +1711,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 44,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -1943,7 +1943,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 43,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -2061,7 +2061,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 41,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -2142,7 +2142,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 40,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -2263,7 +2263,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 38,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -2385,7 +2385,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 12,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -2496,7 +2496,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 36,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
