@@ -136,9 +136,7 @@
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       border-bottom: 0 none;
-      font-family: $bergen-text;
-      font-size: 1.2rem;
-      font-weight: normal;
+      font-size: 1.5rem; 
       text-transform: none;
       width: 20%;
     }
@@ -154,6 +152,14 @@
         @media screen and (min-width: $mobile-footer-breakpoint) {
           background-color: $white;
         }
+      }
+    }
+
+    > a {
+      font-weight: bold;
+      &:hover::after,
+      &:focus::after {
+        display: none;
       }
     }
 
@@ -174,7 +180,7 @@
         color: $black;
 
         @media screen and (min-width: $mobile-footer-breakpoint) {
-          color: $white;
+          color: $black;
         }
       }
     }
@@ -271,7 +277,6 @@
     @media screen and (min-width: $mobile-footer-breakpoint) {
       background-color: transparent;
       font-size: .875rem;
-      margin-bottom: .875rem;
     }
 
     @media screen and (min-width: $full) {
@@ -283,7 +288,7 @@
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
-        color: $white;
+        font-size: 1.125rem;
         padding: 0;
         position: relative;
       }
