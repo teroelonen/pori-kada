@@ -1,13 +1,6 @@
-.node--liftup--presentation {
-    .liftup-box__group-left{
-        display: flex;
-        flex-direction: column;
-    } 
-}
 .presentation-colors-1  {
     border-top: 10px solid #1E8566;
     background: $white;
-    .liftup-box__group-left{
         .field--name-field-visible-title{
             margin:3rem;
             .field__items{
@@ -18,7 +11,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -29,6 +24,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -57,12 +55,10 @@
             }
         }
     }
-}
 
 .presentation-colors-2  {
     border-top: 10px solid #B35C00;
     background: $white;
-    .liftup-box__group-left{
         .field--name-field-visible-title{
             margin:3rem;
             .field__items{
@@ -73,7 +69,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -84,6 +82,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -112,12 +113,10 @@
             }
         }
     }
-}
 
 .presentation-colors-3  {
     border-top: 10px solid #000;
     background: $white;
-    .liftup-box__group-left{
         .field--name-field-visible-title{
             margin:3rem;
             .field__items{
@@ -128,7 +127,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -139,6 +140,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -166,5 +170,15 @@
             }
         }
     }
-}
-
+.ds-2col > .group-left {
+    @media screen and (max-width: 1024px){
+        float: none !important;
+        width:100%;
+    }     
+ }
+ .ds-2col > .group-right {
+    @media screen and (max-width: 1024px){
+        float: none !important;
+        width:100%;
+    }     
+ }
