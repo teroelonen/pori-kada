@@ -474,7 +474,7 @@ function kada_contact_information_feature_strongarm() {
             'visible' => FALSE,
           ),
           'person_card' => array(
-            'weight' => 40,
+            'weight' => '49',
             'visible' => FALSE,
           ),
           'person_card_with_skills' => array(
@@ -489,6 +489,10 @@ function kada_contact_information_feature_strongarm() {
           ),
           'person_card_with_skills' => array(
             'weight' => '34',
+            'visible' => FALSE,
+          ),
+          'person_card' => array(
+            'weight' => '32',
             'visible' => FALSE,
           ),
         ),
