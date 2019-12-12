@@ -177,12 +177,6 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-20',
         ),
-        'menu_block-33' => array(
-          'module' => 'menu_block',
-          'delta' => '33',
-          'region' => 'footer',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
@@ -225,12 +219,6 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => '5',
           'region' => 'footer',
           'weight' => '-20',
-        ),
-        'menu_block-26' => array(
-          'module' => 'menu_block',
-          'delta' => '26',
-          'region' => 'footer',
-          'weight' => '-10',
         ),
       ),
     ),
@@ -275,12 +263,6 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-20',
         ),
-        'menu_block-23' => array(
-          'module' => 'menu_block',
-          'delta' => '23',
-          'region' => 'footer',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
@@ -323,12 +305,6 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => '6',
           'region' => 'footer',
           'weight' => '-10',
-        ),
-        'menu_block-32' => array(
-          'module' => 'menu_block',
-          'delta' => '32',
-          'region' => 'footer',
-          'weight' => '-9',
         ),
       ),
     ),
