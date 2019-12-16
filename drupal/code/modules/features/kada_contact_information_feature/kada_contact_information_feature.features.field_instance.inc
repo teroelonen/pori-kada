@@ -97,7 +97,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'above',
@@ -206,7 +206,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'above',
@@ -495,7 +495,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'full' => array(
         'label' => 'inline',
@@ -740,7 +740,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'inline',
@@ -863,7 +863,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'inline',
@@ -985,7 +985,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1275,7 +1275,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'above',
@@ -1467,7 +1467,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1594,7 +1594,7 @@ function kada_contact_information_feature_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1686,7 +1686,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'inline',
@@ -1918,7 +1918,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'inline',
@@ -2359,7 +2359,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'inline',
@@ -2472,7 +2472,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 26,
       ),
       'full' => array(
         'label' => 'above',

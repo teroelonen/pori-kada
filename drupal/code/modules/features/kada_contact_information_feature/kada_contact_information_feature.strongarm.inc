@@ -432,6 +432,12 @@ function kada_contact_information_feature_strongarm() {
       'waste_search' => array(
         'custom_settings' => FALSE,
       ),
+      'current_twitter' => array(
+        'custom_settings' => FALSE,
+      ),
+      'presentation' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -454,7 +460,7 @@ function kada_contact_information_feature_strongarm() {
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '21',
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'only_title' => array(
@@ -484,7 +490,7 @@ function kada_contact_information_feature_strongarm() {
         ),
         'sharethis' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'person_card_with_skills' => array(
