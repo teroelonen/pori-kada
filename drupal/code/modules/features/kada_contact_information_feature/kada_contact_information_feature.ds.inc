@@ -19,57 +19,9 @@ function kada_contact_information_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'add_position_link' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'positions_of_trust' => array(
       'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_email_single' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'person__email',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_first_name' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'prefix' => '<h1 class="person__name">',
-        ),
-      ),
-    ),
-    'field_person_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'person__image',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_surname' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'prefix' => '&nbsp;',
-          'suffix' => '</h1>',
-        ),
-      ),
     ),
   );
   $export['node|person|default'] = $ds_fieldsetting;
@@ -369,20 +321,19 @@ function kada_contact_information_feature_ds_layout_settings_info() {
         3 => 'field_email_single',
         4 => 'group_htabs',
         5 => 'field_profession',
-        6 => 'field_political_party',
-        7 => 'field_mobile_phone',
-        8 => 'positions_of_trust',
-        9 => 'add_position_link',
-        10 => 'field_employee_title',
-        11 => 'field_office_tr',
-        12 => 'field_task_description',
-        13 => 'field_superior',
-        14 => 'field_phone',
-        15 => 'field_mobile_phone_work',
-        16 => 'field_phone_switch',
-        17 => 'group_employee',
-        18 => 'group_trustee',
-        19 => 'field_fax_number',
+        6 => 'field_mobile_phone',
+        7 => 'field_political_party',
+        8 => 'add_position_link',
+        9 => 'field_employee_title',
+        10 => 'field_office_tr',
+        11 => 'field_task_description',
+        12 => 'field_superior',
+        13 => 'field_phone',
+        14 => 'field_mobile_phone_work',
+        15 => 'group_employee',
+        16 => 'group_trustee',
+        17 => 'field_phone_switch',
+        18 => 'field_fax_number',
       ),
     ),
     'fields' => array(
@@ -392,9 +343,8 @@ function kada_contact_information_feature_ds_layout_settings_info() {
       'field_email_single' => 'ds_content',
       'group_htabs' => 'ds_content',
       'field_profession' => 'ds_content',
-      'field_political_party' => 'ds_content',
       'field_mobile_phone' => 'ds_content',
-      'positions_of_trust' => 'ds_content',
+      'field_political_party' => 'ds_content',
       'add_position_link' => 'ds_content',
       'field_employee_title' => 'ds_content',
       'field_office_tr' => 'ds_content',
@@ -402,9 +352,9 @@ function kada_contact_information_feature_ds_layout_settings_info() {
       'field_superior' => 'ds_content',
       'field_phone' => 'ds_content',
       'field_mobile_phone_work' => 'ds_content',
-      'field_phone_switch' => 'ds_content',
       'group_employee' => 'ds_content',
       'group_trustee' => 'ds_content',
+      'field_phone_switch' => 'ds_content',
       'field_fax_number' => 'ds_content',
     ),
     'classes' => array(),
@@ -416,6 +366,7 @@ function kada_contact_information_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|person|default'] = $ds_layout;
 

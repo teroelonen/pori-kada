@@ -411,7 +411,6 @@ function kada_contact_information_feature_field_group_info() {
       1 => 'field_political_party',
       2 => 'field_profession',
       3 => 'add_position_link',
-      4 => 'positions_of_trust',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
