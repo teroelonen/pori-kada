@@ -45,7 +45,7 @@ services:
     type: node
   # redis:
   #   type: redis
-  #   portforward: true 
+  #   portforward: true
   solr:
     type: solr:5
     config:
