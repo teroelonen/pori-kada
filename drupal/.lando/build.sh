@@ -1,6 +1,14 @@
 #!/bin/bash
 set -exu
 
+# Install php_codesniffer & dependencies.
+cd /var/www/.composer/
+rm -rf composer.lock vendor
+composer require --dev squizlabs/php_codesniffer
+composer require --dev dealerdirect/phpcodesniffer-composer-installer
+composer require --dev phpcompatibility/php-compatibility:*
+composer require --dev drupal/coder:^8.3.7
+
 # Symlink the aliases file.
 rm -Rf $HOME/.drush
 mkdir -p $HOME/.drush
@@ -14,9 +22,9 @@ mkdir -vp /app/files_private
 chmod -R a+w /app/files_private
 
 # Run makefile.
-chmod -R a+w /app/web
 rm -rf /app/web
-drush make /app/conf/kadaproject.make /app/web
+cd /app
+drush @pori.local make conf/kadaproject.make web
 
 # Add remaining symlinks. 
 chmod -R a+w /app/web
