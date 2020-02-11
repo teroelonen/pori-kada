@@ -162,11 +162,17 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'quicktabs-feed_tabs_businesspori' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs_businesspori',
+          'region' => 'header',
+          'weight' => '-9',
+        ),
         'views-kada_recommended-block' => array(
           'module' => 'views',
           'delta' => 'kada_recommended-block',
           'region' => 'header',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-kada_news-news_title_block' => array(
           'module' => 'views',
@@ -203,12 +209,6 @@ function business_pori_configurations_context_default_contexts() {
           'delta' => 'widget_before_content',
           'region' => 'after_content',
           'weight' => '-7',
-        ),
-        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
-          'module' => 'quicktabs',
-          'delta' => 'feed_tabs_frontpage_promoted_con',
-          'region' => 'after_content',
-          'weight' => '-6',
         ),
         'views-4e860b19463e3f674732c95e074be424' => array(
           'module' => 'views',

@@ -15,6 +15,7 @@ include_once 'pori_front_page_liftups.features.inc';
  */
 function pori_front_page_liftups_quicktabs_alter(&$quicktabs) {
   if ($quicktabs->machine_name == 'feed_tabs_frontpage_promoted_con' ||
+    $quicktabs->machine_name == 'feed_tabs_businesspori' ||
     $quicktabs->machine_name == 'feed_tabs' ||
     $quicktabs->machine_name == 'feed_tabs_section') {
     $node = menu_get_object();
@@ -35,7 +36,15 @@ function pori_front_page_liftups_quicktabs_alter(&$quicktabs) {
         'tab_section_instagram' => 'instagram',
         'tab_section_linkedin' => 'linkedin',
         'tab_section_youtube' => 'youtube',
-        'tab_section_blogs' => 'blogs'
+        'tab_section_blogs' => 'blogs',
+        'tab_news_business' => 'news',
+        'tab_nearby_business' => 'nearby',
+        'tab_facebook_business' => 'facebook',
+        'tab_twitter_business' => 'twitter',
+        'tab_instagram_business' => 'instagram',
+        'tab_linkedin_business' => 'linkedin',
+        'tab_youtube_business' => 'youtube',
+        'tab_blogs_business' => 'blogs'
       );
       $enabled_qtabs = array_map(function($e) { return $e['value']; }, $node->field_feed_tabs[LANGUAGE_NONE]);
       $count = count($quicktabs->tabs);
