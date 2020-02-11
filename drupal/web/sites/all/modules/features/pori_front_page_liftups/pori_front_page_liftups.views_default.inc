@@ -67,8 +67,13 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -82,7 +87,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'current';
-  /* Relationship: Flags: current */
+  /* Relationship: Nostovaihtoehdot: current */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
@@ -92,19 +97,19 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Sisältö: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -114,7 +119,7 @@ function pori_front_page_liftups_views_default_views() {
     'social_media_update' => 'social_media_update',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -122,21 +127,21 @@ function pori_front_page_liftups_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -155,26 +160,27 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Current | Section', 'section');
   $handler->display->display_options['display_description'] = 'Content flagged to current per section';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -184,13 +190,13 @@ function pori_front_page_liftups_views_default_views() {
     'news_item' => 'news_item',
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -211,11 +217,12 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -223,7 +230,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -240,7 +247,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | News', 'tab_news');
   $handler->display->display_options['display_description'] = 'News attached to a theme flagged in current';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
@@ -248,14 +255,14 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -263,20 +270,20 @@ function pori_front_page_liftups_views_default_views() {
     'liftup' => 'liftup',
     'news_item' => 'news_item',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -292,41 +299,41 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'FB updates attached to a theme flagged in current';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'facebook' => 'facebook',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -358,41 +365,41 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'twitter' => 'twitter',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -411,11 +418,12 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -423,7 +431,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -435,19 +443,20 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | News | Section', 'tab_section_news');
   $handler->display->display_options['display_description'] = 'News attached to a section flagged in current';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
@@ -458,14 +467,14 @@ function pori_front_page_liftups_views_default_views() {
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -475,14 +484,14 @@ function pori_front_page_liftups_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -490,7 +499,7 @@ function pori_front_page_liftups_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 2;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Sisältö: Title (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -508,46 +517,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Facebook | Section', 'tab_section_facebook');
   $handler->display->display_options['display_description'] = 'FB updates attached to a section flagged in current';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
@@ -564,46 +574,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Twitter | Section', 'tab_section_twitter');
   $handler->display->display_options['display_description'] = 'Tweets attached to a section flagged in current';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
@@ -624,7 +635,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Location (field_location) - proximity */
+  /* Sort criterion: Kenttä: Location (field_location) - proximity */
   $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';
   $handler->display->display_options['sorts']['field_geofield_distance']['table'] = 'field_data_field_location';
   $handler->display->display_options['sorts']['field_geofield_distance']['field'] = 'field_geofield_distance';
@@ -635,7 +646,7 @@ function pori_front_page_liftups_views_default_views() {
   );
   $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
   $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
@@ -643,34 +654,34 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news_item' => 'news_item',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Location (field_location) - proximity */
+  /* Filter criterion: Kenttä: Location (field_location) - proximity */
   $handler->display->display_options['filters']['field_geofield_distance']['id'] = 'field_geofield_distance';
   $handler->display->display_options['filters']['field_geofield_distance']['table'] = 'field_data_field_location';
   $handler->display->display_options['filters']['field_geofield_distance']['field'] = 'field_geofield_distance';
@@ -699,7 +710,7 @@ function pori_front_page_liftups_views_default_views() {
   );
   $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
   $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -713,7 +724,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Location (field_location) - proximity */
+  /* Sort criterion: Kenttä: Location (field_location) - proximity */
   $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';
   $handler->display->display_options['sorts']['field_geofield_distance']['table'] = 'field_data_field_location';
   $handler->display->display_options['sorts']['field_geofield_distance']['field'] = 'field_geofield_distance';
@@ -724,53 +735,54 @@ function pori_front_page_liftups_views_default_views() {
   );
   $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
   $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news_item' => 'news_item',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Field: Location (field_location) - proximity */
+  /* Filter criterion: Kenttä: Location (field_location) - proximity */
   $handler->display->display_options['filters']['field_geofield_distance']['id'] = 'field_geofield_distance';
   $handler->display->display_options['filters']['field_geofield_distance']['table'] = 'field_data_field_location';
   $handler->display->display_options['filters']['field_geofield_distance']['field'] = 'field_geofield_distance';
@@ -810,41 +822,41 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'Instagram updates attached to a theme flagged in current';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'instagram' => 'instagram',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -859,46 +871,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Instagram | Section', 'tab_section_instagram');
   $handler->display->display_options['display_description'] = 'Instagram updates attached to a section flagged in current';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
@@ -916,41 +929,41 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'LinkedIn updates attached to a theme flagged in current';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'linkedin' => 'linkedin',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -965,46 +978,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | LinkedIn | Section', 'tab_section_linkedin');
   $handler->display->display_options['display_description'] = 'LinkedIn updates attached to a section flagged in current';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
@@ -1025,47 +1039,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Sisältö: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -1080,51 +1094,52 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Blogs | Section', 'tab_section_blogs');
   $handler->display->display_options['display_description'] = 'Blogs attached to a section flagged in current';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Flags: Flagged time */
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Sisältö: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -1142,41 +1157,41 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'Youtube videos attached to a theme flagged in current';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'youtube' => 'youtube',
   );
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -1191,46 +1206,47 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Youtube | Section', 'tab_section_youtube');
   $handler->display->display_options['display_description'] = 'Youtube videos attached to a section flagged in current';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'social_media_update' => 'social_media_update',
   );
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Type (field_some_type) */
+  /* Filter criterion: Sisältö: Type (field_some_type) */
   $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
   $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
   $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
@@ -1242,21 +1258,514 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | News (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | News (BusinessPori)', 'tab_news_business');
+  $handler->display->display_options['display_description'] = 'News attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'liftup' => 'liftup',
+    'news_item' => 'news_item',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | Nearby (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Nearby (BusinessPori)', 'tab_nearby_business');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'liftup-box-list proximity';
+  $handler->display->display_options['display_description'] = 'Content attached to a theme and is located near';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Kenttä: Location (field_location) - proximity */
+  $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';
+  $handler->display->display_options['sorts']['field_geofield_distance']['table'] = 'field_data_field_location';
+  $handler->display->display_options['sorts']['field_geofield_distance']['field'] = 'field_geofield_distance';
+  $handler->display->display_options['sorts']['field_geofield_distance']['source'] = 'exposed_geofield_filter';
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_manual'] = array(
+    'lat' => '',
+    'lon' => '',
+  );
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
+  $handler->display->display_options['sorts']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news_item' => 'news_item',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Kenttä: Location (field_location) - proximity */
+  $handler->display->display_options['filters']['field_geofield_distance']['id'] = 'field_geofield_distance';
+  $handler->display->display_options['filters']['field_geofield_distance']['table'] = 'field_data_field_location';
+  $handler->display->display_options['filters']['field_geofield_distance']['field'] = 'field_geofield_distance';
+  $handler->display->display_options['filters']['field_geofield_distance']['operator'] = '>';
+  $handler->display->display_options['filters']['field_geofield_distance']['value'] = array(
+    'distance' => '0',
+    'distance2' => 200,
+    'unit' => '6371000',
+    'origin' => array(
+      'lat' => '60.4518126',
+      'lon' => '22.2666303',
+    ),
+  );
+  $handler->display->display_options['filters']['field_geofield_distance']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_geofield_distance']['expose']['operator_id'] = 'field_geofield_distance_op';
+  $handler->display->display_options['filters']['field_geofield_distance']['expose']['label'] = 'Coordinates';
+  $handler->display->display_options['filters']['field_geofield_distance']['expose']['operator'] = 'field_geofield_distance_op';
+  $handler->display->display_options['filters']['field_geofield_distance']['expose']['identifier'] = 'field_geofield_distance';
+  $handler->display->display_options['filters']['field_geofield_distance']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
+  $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+
+  /* Display: Tab | Facebook (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Facebook (BusinessPori)', 'tab_facebook_business');
+  $handler->display->display_options['display_description'] = 'FB updates attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'social_media_update' => 'social_media_update',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Type (field_some_type) */
+  $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
+  $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
+    'facebook' => 'facebook',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | Twitter (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Twitter (BusinessPori)', 'tab_twitter_business');
+  $handler->display->display_options['display_description'] = 'Tweets attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'current_twitter';
+  $handler->display->display_options['row_options']['load_comments'] = 0;
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'current_twitter';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'social_media_update' => 'social_media_update',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Type (field_some_type) */
+  $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
+  $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
+    'twitter' => 'twitter',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | Instagram (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Instagram (BusinessPori)', 'tab_instagram_business');
+  $handler->display->display_options['display_description'] = 'Instagram updates attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'social_media_update' => 'social_media_update',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Type (field_some_type) */
+  $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
+  $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
+    'instagram' => 'instagram',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | LinkedIn (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | LinkedIn (BusinessPori)', 'tab_linkedin_business');
+  $handler->display->display_options['display_description'] = 'LinkedIn updates attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'social_media_update' => 'social_media_update',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Type (field_some_type) */
+  $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
+  $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
+    'linkedin' => 'linkedin',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | Youtube (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Youtube (BusinessPori)', 'tab_youtube_business');
+  $handler->display->display_options['display_description'] = 'Youtube videos attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'social_media_update' => 'social_media_update',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Type (field_some_type) */
+  $handler->display->display_options['filters']['field_some_type_value']['id'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['table'] = 'field_data_field_some_type';
+  $handler->display->display_options['filters']['field_some_type_value']['field'] = 'field_some_type_value';
+  $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
+    'youtube' => 'youtube',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: Tab | Blogs (BusinessPori) */
+  $handler = $view->new_display('block', 'Tab | Blogs (BusinessPori)', 'tab_blogs_business');
+  $handler->display->display_options['display_description'] = 'Blogs attached to a theme flagged in current';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Nostovaihtoehdot: Flagged time */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Sort criterion: Sisältö: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Sisältö: Published status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Sisältö: Tyyppi */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blog_post' => 'blog_post',
+  );
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Sisältö: Kieli */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Sisältö: Promoted to front page status */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
   $translatables['kada_current_promoted_'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
     t('flag'),
     t('OG membership from node'),
     t('Current'),
     t('Content flagged to current per theme'),
     t('Current | Section'),
     t('Content flagged to current per section'),
-    t('All'),
+    t('Kaikki'),
     t('Tab | All'),
     t('All content attached to a theme flagged in current'),
     t('Tab | News'),
@@ -1294,6 +1803,14 @@ function pori_front_page_liftups_views_default_views() {
     t('Youtube videos attached to a theme flagged in current'),
     t('Tab | Youtube | Section'),
     t('Youtube videos attached to a section flagged in current'),
+    t('Tab | News (BusinessPori)'),
+    t('Tab | Nearby (BusinessPori)'),
+    t('Tab | Facebook (BusinessPori)'),
+    t('Tab | Twitter (BusinessPori)'),
+    t('Tab | Instagram (BusinessPori)'),
+    t('Tab | LinkedIn (BusinessPori)'),
+    t('Tab | Youtube (BusinessPori)'),
+    t('Tab | Blogs (BusinessPori)'),
   );
   $export['kada_current_promoted_'] = $view;
 
