@@ -180,6 +180,12 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-10',
         ),
+        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs_frontpage_promoted_con',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',
