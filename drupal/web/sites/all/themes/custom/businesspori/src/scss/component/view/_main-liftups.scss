@@ -18,8 +18,14 @@ $main-liftup-content-padding: 20px;
   }
 }
 
-.main-liftups .view-content,
 #block-quicktabs-feed-tabs-frontpage-promoted-con {
+  @media screen and (min-width: $desktop) {
+    padding-right: $container-gutter;
+    padding-left: $container-gutter;
+  }
+}
+
+.main-liftups .view-content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
