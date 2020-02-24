@@ -607,7 +607,9 @@ function pori_configuration_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 22,
       ),
@@ -626,7 +628,9 @@ function pori_configuration_field_default_field_instances() {
       'presentation' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 2,
       ),
@@ -1266,7 +1270,9 @@ function pori_configuration_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
