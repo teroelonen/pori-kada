@@ -25,6 +25,8 @@ services:
       - /app/.lando/build.sh
       # - /app/build.sh build lando
     overrides:
+      volumes:
+        - ./:/app:consistent
       environment:
         WKV_SITE_ENV: lando
         SAML_MEMCACHE_STORE: memcached
