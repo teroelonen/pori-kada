@@ -35,20 +35,11 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Suodata';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'field_person_image' => 'field_person_image',
@@ -119,11 +110,11 @@ function kada_contact_information_feature_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Otsikko: Global: Result summary */
+  /* Header: Global: Result summary */
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  /* Relationship: Sisältö: Taxonomy terms on node */
+  /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -142,7 +133,7 @@ function kada_contact_information_feature_views_default_views() {
     'trust_unit' => 0,
     'trustee_role' => 0,
   );
-  /* Kenttä: Bulk operations: Sisältö */
+  /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -187,7 +178,7 @@ function kada_contact_information_feature_views_default_views() {
       'label' => '',
     ),
   );
-  /* Kenttä: Sisältö: Person image */
+  /* Field: Content: Person image */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
@@ -197,33 +188,33 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
     'link' => '0',
   );
-  /* Kenttä: Sisältö: Otsikko */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Title (drupal)';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Kenttä: Sisältö: Person type */
+  /* Field: Content: Person type */
   $handler->display->display_options['fields']['field_person_type']['id'] = 'field_person_type';
   $handler->display->display_options['fields']['field_person_type']['table'] = 'field_data_field_person_type';
   $handler->display->display_options['fields']['field_person_type']['field'] = 'field_person_type';
-  $handler->display->display_options['fields']['field_person_type']['label'] = 'Tyyppi';
+  $handler->display->display_options['fields']['field_person_type']['label'] = 'Type';
   $handler->display->display_options['fields']['field_person_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_person_type']['delta_offset'] = '0';
-  /* Kenttä: Sisältö: Office */
+  /* Field: Content: Office */
   $handler->display->display_options['fields']['field_office_tr']['id'] = 'field_office_tr';
   $handler->display->display_options['fields']['field_office_tr']['table'] = 'field_data_field_office_tr';
   $handler->display->display_options['fields']['field_office_tr']['field'] = 'field_office_tr';
   $handler->display->display_options['fields']['field_office_tr']['label'] = 'Yksikkö';
   $handler->display->display_options['fields']['field_office_tr']['type'] = 'hs_taxonomy_term_reference_hierarchical_text';
   $handler->display->display_options['fields']['field_office_tr']['delta_offset'] = '0';
-  /* Kenttä: Sisältö: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['field_employee_title']['id'] = 'field_employee_title';
   $handler->display->display_options['fields']['field_employee_title']['table'] = 'field_data_field_employee_title';
   $handler->display->display_options['fields']['field_employee_title']['field'] = 'field_employee_title';
   $handler->display->display_options['fields']['field_employee_title']['label'] = 'Work title';
-  /* Kenttä: Sisältö: Political party */
+  /* Field: Content: Political party */
   $handler->display->display_options['fields']['field_political_party']['id'] = 'field_political_party';
   $handler->display->display_options['fields']['field_political_party']['table'] = 'field_data_field_political_party';
   $handler->display->display_options['fields']['field_political_party']['field'] = 'field_political_party';
@@ -231,7 +222,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['field_political_party']['settings'] = array(
     'link' => 0,
   );
-  /* Kenttä: Sisältö: Profession */
+  /* Field: Content: Profession */
   $handler->display->display_options['fields']['field_profession']['id'] = 'field_profession';
   $handler->display->display_options['fields']['field_profession']['table'] = 'field_data_field_profession';
   $handler->display->display_options['fields']['field_profession']['field'] = 'field_profession';
@@ -242,40 +233,40 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'muokkaa';
-  /* Kenttä: Sisältö: Delete link */
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
+  /* Field: Content: Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['label'] = '';
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['delete_node']['text'] = 'poista';
-  /* Sort criterion: Sisältö: Otsikko */
+  $handler->display->display_options['fields']['delete_node']['text'] = 'delete';
+  /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Filter criterion: Sisältö: Julkaistu */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'person' => 'person',
   );
-  /* Filter criterion: Sisältö: Otsikko */
+  /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Otsikko';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -286,13 +277,13 @@ function kada_contact_information_feature_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Sisältö: Person type (field_person_type) */
+  /* Filter criterion: Content: Person type (field_person_type) */
   $handler->display->display_options['filters']['field_person_type_value']['id'] = 'field_person_type_value';
   $handler->display->display_options['filters']['field_person_type_value']['table'] = 'field_data_field_person_type';
   $handler->display->display_options['filters']['field_person_type_value']['field'] = 'field_person_type_value';
   $handler->display->display_options['filters']['field_person_type_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_person_type_value']['expose']['operator_id'] = 'field_person_type_value_op';
-  $handler->display->display_options['filters']['field_person_type_value']['expose']['label'] = 'Tyyppi';
+  $handler->display->display_options['filters']['field_person_type_value']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['field_person_type_value']['expose']['operator'] = 'field_person_type_value_op';
   $handler->display->display_options['filters']['field_person_type_value']['expose']['identifier'] = 'field_person_type_value';
   $handler->display->display_options['filters']['field_person_type_value']['expose']['remember_roles'] = array(
@@ -303,13 +294,13 @@ function kada_contact_information_feature_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Sisältö: Office (field_office_tr) */
+  /* Filter criterion: Content: Office (field_office_tr) */
   $handler->display->display_options['filters']['field_office_tr_tid']['id'] = 'field_office_tr_tid';
   $handler->display->display_options['filters']['field_office_tr_tid']['table'] = 'field_data_field_office_tr';
   $handler->display->display_options['filters']['field_office_tr_tid']['field'] = 'field_office_tr_tid';
   $handler->display->display_options['filters']['field_office_tr_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_office_tr_tid']['expose']['operator_id'] = 'field_office_tr_tid_op';
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['label'] = 'Yksikkö';
+  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['label'] = 'Office';
   $handler->display->display_options['filters']['field_office_tr_tid']['expose']['operator'] = 'field_office_tr_tid_op';
   $handler->display->display_options['filters']['field_office_tr_tid']['expose']['identifier'] = 'field_office_tr_tid';
   $handler->display->display_options['filters']['field_office_tr_tid']['expose']['remember_roles'] = array(
@@ -356,31 +347,32 @@ function kada_contact_information_feature_views_default_views() {
     t('Master'),
     t('KADA Persons'),
     t('more'),
-    t('Suodata'),
-    t('Palauta oletusarvoihin'),
-    t('Järjestele'),
-    t('Nou'),
-    t('Las'),
-    t('Tuloksia sivulla'),
+    t('Filter'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
     t('- All -'),
     t('Offset'),
-    t('« ensimmäinen'),
-    t('‹ edellinen'),
-    t('seuraava ›'),
-    t('viimeinen »'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('Displaying @start - @end of @total'),
     t('term'),
-    t('Sisältö'),
-    t('- Valitse toimenpide -'),
+    t('Content'),
+    t('- Choose an operation -'),
     t('Title (drupal)'),
-    t('Tyyppi'),
-    t('Yksikkö'),
+    t('Type'),
+    t('Office'),
     t('Work title'),
-    t('Puolue'),
-    t('Ammatti'),
-    t('muokkaa'),
-    t('poista'),
-    t('Otsikko'),
+    t('Political party'),
+    t('Profession'),
+    t('edit'),
+    t('delete'),
+    t('Title'),
+    t('Office (field_office_tr)'),
     t('Page'),
   );
   $export['kada_persons'] = $view;
@@ -397,17 +389,13 @@ function kada_contact_information_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Luottamustehtävät';
+  $handler->display->display_options['title'] = 'Positions of trust';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_accordion';
@@ -426,7 +414,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_trustee_person_node']['r_index'] = '0';
   $handler->display->display_options['relationships']['relation_trustee_person_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_trustee_person_node']['entity_deduplication_right'] = 0;
-  /* Kenttä: Trust unit, Role */
+  /* Field: Trust unit, Role */
   $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
   $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
@@ -437,7 +425,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'only_title';
   $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
-  /* Kenttä: Accordion content */
+  /* Field: Accordion content */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -448,7 +436,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'accordion';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Kenttä: Sisältö: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -459,7 +447,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit position';
-  /* Kenttä: Sisältö: Delete link */
+  /* Field: Content: Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -470,7 +458,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['delete_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['delete_node']['text'] = 'Delete position';
-  /* Contextual filter: Sisältö: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -481,14 +469,14 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Sisältö: Julkaistu */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -504,7 +492,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler = $view->new_display('block', 'Search result', 'search');
   $handler->display->display_options['display_description'] = 'List of positions for search result display mode';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Kenttä: Trust unit, Role */
+  /* Field: Trust unit, Role */
   $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
   $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
@@ -517,14 +505,14 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
   $translatables['kada_positions_of_trust'] = array(
     t('Master'),
-    t('Luottamustehtävät'),
+    t('Positions of trust'),
     t('more'),
-    t('Hae'),
+    t('Apply'),
     t('Palauta oletusarvoihin'),
-    t('Järjestele'),
-    t('Nou'),
-    t('Las'),
-    t('Luottamushenkilö'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Trustee person'),
     t('Edit position'),
     t('Delete position'),
     t('Kaikki'),
@@ -554,11 +542,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -578,7 +562,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_deputy_member_target_id']['table'] = 'field_data_field_deputy_member';
   $handler->display->display_options['relationships']['field_deputy_member_target_id']['field'] = 'field_deputy_member_target_id';
   $handler->display->display_options['relationships']['field_deputy_member_target_id']['ui_name'] = 'Deputy member';
-  $handler->display->display_options['relationships']['field_deputy_member_target_id']['label'] = 'Varajäsen';
+  $handler->display->display_options['relationships']['field_deputy_member_target_id']['label'] = 'Deputy member';
   /* Relationship: Role */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
@@ -599,7 +583,7 @@ function kada_contact_information_feature_views_default_views() {
     'theme' => 0,
     'trust_unit' => 0,
   );
-  /* Kenttä: Sisältö: Person image */
+  /* Field: Content: Person image */
   $handler->display->display_options['fields']['field_person_image']['id'] = 'field_person_image';
   $handler->display->display_options['fields']['field_person_image']['table'] = 'field_data_field_person_image';
   $handler->display->display_options['fields']['field_person_image']['field'] = 'field_person_image';
@@ -610,7 +594,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['field_person_image']['settings'] = array(
     'link' => '1',
   );
-  /* Kenttä: Sisältö: First name */
+  /* Field: Content: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
@@ -624,7 +608,7 @@ function kada_contact_information_feature_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Kenttä: Sisältö: Surname */
+  /* Field: Content: Surname */
   $handler->display->display_options['fields']['field_surname']['id'] = 'field_surname';
   $handler->display->display_options['fields']['field_surname']['table'] = 'field_data_field_surname';
   $handler->display->display_options['fields']['field_surname']['field'] = 'field_surname';
@@ -642,7 +626,7 @@ function kada_contact_information_feature_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Kenttä: Sisältö: Role */
+  /* Field: Content: Role */
   $handler->display->display_options['fields']['field_trustee_role']['id'] = 'field_trustee_role';
   $handler->display->display_options['fields']['field_trustee_role']['table'] = 'field_data_field_trustee_role';
   $handler->display->display_options['fields']['field_trustee_role']['field'] = 'field_trustee_role';
@@ -654,12 +638,12 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['field_trustee_role']['settings'] = array(
     'link' => 0,
   );
-  /* Kenttä: Sisältö: Rendered Node */
+  /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity_1']['id'] = 'rendered_entity_1';
   $handler->display->display_options['fields']['rendered_entity_1']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity_1']['field'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity_1']['relationship'] = 'field_deputy_member_target_id';
-  $handler->display->display_options['fields']['rendered_entity_1']['label'] = 'Varajäsen';
+  $handler->display->display_options['fields']['rendered_entity_1']['label'] = 'Deputy member';
   $handler->display->display_options['fields']['rendered_entity_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['rendered_entity_1']['element_label_type'] = '0';
   $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
@@ -668,17 +652,17 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'only_title';
   $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
-  /* Sort criterion: Luokittelutermi: Paino */
+  /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
-  /* Sort criterion: Sisältö: Surname (field_surname) */
+  /* Sort criterion: Content: Surname (field_surname) */
   $handler->display->display_options['sorts']['field_surname_value']['id'] = 'field_surname_value';
   $handler->display->display_options['sorts']['field_surname_value']['table'] = 'field_data_field_surname';
   $handler->display->display_options['sorts']['field_surname_value']['field'] = 'field_surname_value';
   $handler->display->display_options['sorts']['field_surname_value']['relationship'] = 'relation_trustee_person_node';
-  /* Contextual filter: Sisältö: Has taxonomy term ID (with depth) */
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -698,7 +682,7 @@ function kada_contact_information_feature_views_default_views() {
   );
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
   $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Contextual filter: Sisältö: Has taxonomy term ID depth modifier */
+  /* Contextual filter: Content: Has taxonomy term ID depth modifier */
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['id'] = 'term_node_tid_depth_modifier';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['field'] = 'term_node_tid_depth_modifier';
@@ -707,20 +691,20 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['specify_validation'] = TRUE;
-  /* Filter criterion: Sisältö: Published or admin */
+  /* Filter criterion: Content: Published status or admin user */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['group'] = 0;
   $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-  /* Filter criterion: Sisältö: Tyyppi */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'position_of_trust' => 'position_of_trust',
   );
-  /* Filter criterion: Luokittelutermi: Hide in listing (field_hide_in_listing) */
+  /* Filter criterion: Taxonomy term: Hide in listing (field_hide_in_listing) */
   $handler->display->display_options['filters']['field_hide_in_listing_value']['id'] = 'field_hide_in_listing_value';
   $handler->display->display_options['filters']['field_hide_in_listing_value']['table'] = 'field_data_field_hide_in_listing';
   $handler->display->display_options['filters']['field_hide_in_listing_value']['field'] = 'field_hide_in_listing_value';
@@ -736,13 +720,13 @@ function kada_contact_information_feature_views_default_views() {
   $translatables['kada_trust_units'] = array(
     t('Master'),
     t('more'),
-    t('Hae'),
+    t('Apply'),
     t('Palauta oletusarvoihin'),
-    t('Järjestele'),
-    t('Nou'),
-    t('Las'),
-    t('Luottamushenkilö'),
-    t('Varajäsen'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Trustee person'),
+    t('Deputy member'),
     t('rooli'),
     t('[field_first_name] [field_surname]'),
     t('Kaikki'),

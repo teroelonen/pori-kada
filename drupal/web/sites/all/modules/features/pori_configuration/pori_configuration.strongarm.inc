@@ -121,7 +121,7 @@ function pori_configuration_strongarm() {
     'withdraw_enabled' => FALSE,
     'withdraw_button_on_info_popup' => 0,
     'withdraw_message' => array(
-      'value' => '<h2>We use cookies on this site to enhance your user experience</h2><p>You have given your consent for us to set cookies.</p>',
+      'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Käytämme tätä tietoa analytiikan,&nbsp;sivujen käyttökokemuksen parantamiseen ja kohdennetun markkinoinnin suorittamiseen.&nbsp;Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön.</p>',
       'format' => 'wysiwyg',
     ),
     'withdraw_tab_button_label' => 'Evästeet',
