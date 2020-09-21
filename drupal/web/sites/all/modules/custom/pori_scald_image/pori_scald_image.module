@@ -45,3 +45,4 @@ function pori_scald_image_entity_load($entities, $type) {
     }
   }
 }
+
