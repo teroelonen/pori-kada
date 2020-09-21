@@ -1,30 +1,6 @@
 <?php
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function pori_scald_image_form_scald_atom_add_form_add_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['file'])) {
-    $form['file']['#plupload_settings']['unique_names'] = 0;
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function pori_scald_image_form_scald_atom_add_form_options_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['atom0']['scald_thumbnail'])) {
-    $form['atom0']['scald_thumbnail'][LANGUAGE_NONE][0]['#plupload_settings']['unique_names'] = 0;
-  }
-  if (!empty($form['atom0']['scald_file'])) {
-    $form['atom0']['scald_file'][LANGUAGE_NONE][0]['#plupload_settings']['unique_names'] = 0;
-  }
-  if (!empty($form['atom0']['scald_video'])) {
-    $form['atom0']['scald_video'][LANGUAGE_NONE][0]['#plupload_settings']['unique_names'] = 0;
-  }
-}
-
-/**
  * Implements hook_entity_load().
  */
 function pori_scald_image_entity_load($entities, $type) {
