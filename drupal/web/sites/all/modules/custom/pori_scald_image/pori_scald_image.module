@@ -16,9 +16,23 @@ function pori_scald_image_file_presave($file) {
  * Implements hook_form_FORM_ID_alter().
  */
 function pori_scald_image_form_scald_atom_add_form_add_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['file'])) {
-    $form['file']['#plupload_settings']['unique_names'] = 0;
-  }
+  $form['#validate'][] = 'pori_scald_image_form_validation';
+}
+
+/**
+ * Custom form validation.
+ */
+function pori_scald_image_form_validation($form, &$form_state) {
+  foreach ($form_state['values']['file'] as &$file) {
+    $old_uri = 'public://atoms/files/' . $file['name'];
+    $files = file_load_multiple([], ['uri' => $old_uri]);
+    $old_file = reset($files);
+
+    if (!empty($old_file)) {
+      file_delete($old_file, TRUE);
+    }
+ }
+  return TRUE;
 }
 
 /**
