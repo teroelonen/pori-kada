@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Implements hook_file_presave().
+ */
+function pori_scald_image_file_presave($file) {
+  $url = file_create_url($file->uri);
+  // Expire Varnish cache for the new file.
+  varnish_expire_cache([$url]);
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function pori_scald_image_form_scald_atom_add_form_add_alter(&$form, &$form_state, $form_id) {
