@@ -4,9 +4,12 @@
  * Implements hook_file_presave().
  */
 function pori_scald_image_file_presave($file) {
-  $url = file_create_url($file->uri);
+  $full_url = file_create_url($file->uri);
+  $parsed_url = parse_url($full_url);
+
   // Expire Varnish cache for the new file.
-  varnish_expire_cache([$url]);
+  varnish_expire_cache([$parsed_url['path'] => $parsed_url['path']]);
+  varnish_purge($parsed_url['host'], $parsed_url['path']);
 }
 
 /**
