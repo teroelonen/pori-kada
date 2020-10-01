@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Implements hook_file_presave().
  */
@@ -24,14 +23,19 @@ function pori_scald_image_form_scald_atom_add_form_add_alter(&$form, &$form_stat
  */
 function pori_scald_image_form_validation($form, &$form_state) {
   foreach ($form_state['values']['file'] as &$file) {
-    $old_uri = 'public://atoms/files/' . $file['name'];
-    $files = file_load_multiple([], ['uri' => $old_uri]);
-    $old_file = reset($files);
-
-    if (!empty($old_file)) {
-      file_delete($old_file, TRUE);
-    }
- }
+    $old_uris[] = 'public://atoms/files/' . $file['name'];
+    $old_uris[] = 'public://thumbnails/file/' . $file['name'];
+    $old_uris[] = 'public://thumbnails/image/' . $file['name'];
+    $old_uris[] = 'public://thumbnails/video/' . $file['name'];
+    foreach ($old_uris as $uri) {
+      $files = file_load_multiple([], ['uri' => $uri]);
+      $old_file = reset($files);
+  
+      if (!empty($old_file)) {
+        file_delete($old_file, TRUE);
+      }
+      }
+  }
   return TRUE;
 }
 
