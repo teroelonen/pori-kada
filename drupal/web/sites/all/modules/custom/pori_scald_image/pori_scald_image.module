@@ -34,7 +34,7 @@ function pori_scald_image_form_validation($form, &$form_state) {
       if (!empty($old_file)) {
         file_delete($old_file, TRUE);
       }
-      }
+    }
   }
   return TRUE;
 }
