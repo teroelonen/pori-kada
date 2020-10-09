@@ -55,6 +55,7 @@ function pori_contact_information_feature_cron() {
     // Reset the continue trigger.
     $incomplete = FALSE;
     $source = feeds_source('phone_csv');
+    // This is every 6 hrs.
     if ($source->imported + 21600 < time()) {
       watchdog('pori_contact_information', "Starting import !id at !progress%", array('!id' => $source->id, '!progress' => round($source->progressImporting() * 100)));
       $config = $source->getConfig();
