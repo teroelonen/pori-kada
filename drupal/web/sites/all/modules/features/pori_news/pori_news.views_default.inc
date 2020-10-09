@@ -282,6 +282,13 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: General archive */
   $handler = $view->new_display('page', 'General archive', 'page');
@@ -512,6 +519,13 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
   $handler->display->display_options['filters']['current_all']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'visitpori/news-archive';
   $translatables['pori_news'] = array(
     t('Master'),
