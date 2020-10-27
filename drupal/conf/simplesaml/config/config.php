@@ -8,6 +8,13 @@ if (!ini_get('session.save_handler')) {
   ini_set('session.save_handler', 'file');
 }
 
+if (empty($_SERVER['HTTP_HOST'])) {
+  $host = 'www.pori.fi';  
+}
+else {
+  $host = $_SERVER['HTTP_HOST'];
+}
+
 $config = array(
 
     /*******************************
@@ -31,7 +38,7 @@ $config = array(
      * external url, no matter where you come from (direct access or via the
      * reverse proxy).
      */
-    'baseurlpath' => 'https://' . $_SERVER['HTTP_HOST'] . '/simplesaml/',
+    'baseurlpath' => 'https://' . $host . '/simplesaml/',
 
     /*
      * The 'application' configuration array groups a set configuration options
@@ -52,7 +59,7 @@ $config = array(
          * need to compute the right URLs yourself and pass them dynamically
          * to SimpleSAMLphp's API.
          */
-        'baseURL' => 'https://' . $_SERVER['HTTP_HOST'],
+        'baseURL' => 'https://' . $host,
     ),
 
     /*
@@ -1024,6 +1031,7 @@ $config = array(
      */
     'metadata.sources' => array(
         array('type' => 'flatfile'),
+        array('type' => 'flatfile', 'directory' => 'metadata/metarefresh-pori'),
     ),
 
     /*
