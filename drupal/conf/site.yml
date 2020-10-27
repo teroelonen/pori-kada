@@ -90,7 +90,7 @@ develop:
       - make
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
-      - shell: sudo -u nginx php conf/simplesaml/modules/cron/bin/cron.php -t hourly
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       # - shell: chmod -R a-w web
 
     update:
