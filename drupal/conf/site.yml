@@ -88,6 +88,9 @@ develop:
     build:
       - shell: chmod -R a+w web
       - make
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
+      - shell: sudo -u nginx php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       # - shell: chmod -R a-w web
 
     update:
@@ -100,6 +103,9 @@ develop:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
@@ -121,6 +127,9 @@ stage:
     build:
       - shell: chmod -R a+w web
       - make
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       # - shell: chmod -R a-w web
 
     update:
@@ -134,6 +143,9 @@ stage:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 prod:
@@ -155,6 +167,9 @@ prod:
     build:
       - shell: chmod -R a+w web
       - make
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       # - shell: chmod -R a-w web
 
     update:
@@ -169,5 +184,8 @@ prod:
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - shell: touch conf/simplesaml/modules/cron/enable
+      - shell: touch conf/simplesaml/modules/metarefresh/enable
       - drush: cc all
+      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
