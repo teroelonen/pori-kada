@@ -36,4 +36,3 @@ drush "$LOCAL" updb -y
 drush "$LOCAL" cc drush
 drush "$LOCAL" cc all
 rm -rf /app/dump.sql
-drush "$LOCAL" uli

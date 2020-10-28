@@ -375,7 +375,7 @@
         "drupal/views_default_view_override": "^2.0",
         "drupal/views_distinct": "^1.0",
         "drupal/views_rss": "^2.0-rc4",
-        "drupal/warden": "^1.0",
+        "drupal/warden": "^2.0",
         "drupal/webform": "^4.21",
         "drupal/wysiwyg": "dev-2.x#1f52209",
         "drupal/xautoload": "^5.7",
