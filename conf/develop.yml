@@ -47,6 +47,29 @@
       tags: ['cron']
       when: drupal_web_root is defined
 
+    # Run the simplesaml daily cron
+    - name: "Run Simplesaml daily crontasks."
+      cron:
+        name: "Run Simplesaml daily tasks"
+        minute: "02"
+        hour: "0"
+        job: "php -d max_execution_time=120 -d memory_limit=600M /var/www/pori.dev.wunder.io/current/conf/simplesaml/modules/cron/bin/cron.php -t daily"
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: drupal_web_root is defined
+
+    # Run the simplesaml hourly cron
+    - name: "Run Simplesaml hourly crontasks."
+      cron:
+        name: "Run Simplesaml hourly tasks"
+        minute: "0"
+        job: "php -d max_execution_time=120 -d memory_limit=600M /var/www/pori.dev.wunder.io/current/conf/simplesaml/modules/cron/bin/cron.php -t hourly"
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: drupal_web_root is defined
+
   vars:
     wkv_site_env: develop
 
