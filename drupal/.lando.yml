@@ -4,6 +4,7 @@ config:
   php: '7.2'
   via: nginx
   webroot: web
+  drush: ^8
   xdebug: false
   config:
     vhosts: ./.lando/drupal7.conf
@@ -37,8 +38,6 @@ services:
   memcached:
     type: memcached
     portforward: true
-    run:
-      - /bin/sh -c '/opt/bitnami/memcached/bin/memcached start -d'
   node:
     type: node
     globals:
@@ -48,7 +47,7 @@ services:
       - /app/.lando/node.sh
   # redis:
   #   type: redis
-  #   portforward: true 
+  #   portforward: true
   solr:
     type: solr:5
     config:
@@ -63,9 +62,9 @@ tooling:
   #   description: Run build.sh commands.
   #   cmd:
   #     - appserver: /app/build.sh
-  bower: 
+  bower:
     service: node
-  gulp: 
+  gulp:
     service: node
   phpcbf:
     description: Run phpcbf commands.
@@ -120,4 +119,4 @@ env_file:
   - .lando/.env
 
 # Tested with Lando version.
-version: v3.0.0-rc.23
+version: v3.0.14

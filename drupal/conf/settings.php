@@ -45,7 +45,7 @@ $conf['cache_prefix']['default'] = 'kada_';
 $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
 $conf['cache_class_cache_page'] = 'VarnishCache';
 $conf['page_cache_invoke_hooks'] = FALSE;
-// Cache clear strategy: 
+// Cache clear strategy:
 // vary across environments.
 // Control terminal host with port
 $conf['varnish_control_terminal'] = "localhost:6082";
@@ -126,19 +126,19 @@ if (!empty($env) && $env != 'prod') {
   );
 }
 
-# Warden settings.
-# Shared secret between the site and Warden server.
+// Warden settings.
+// Shared security token between the site and Warden server.
 $conf['warden_token'] = getenv('WARDEN_TOKEN');
-# Location of your Warden server. No trailing slash.
+// Location of the Warden server, no trailing slash.
 $conf['warden_server_host_path'] = 'https://warden.wunder.io';
-# Allow external callbacks to the site. When set to FALSE pressing refresh site data in
-# Warden will not work
+// Allow refreshing site data from the Warden server.
 $conf['warden_allow_requests'] = TRUE;
-# Basic HTTP authorization credentials.
+// Basic HTTP authorization credentials.
 $conf['warden_http_username'] = 'warden';
 $conf['warden_http_password'] = 'wunder';
-# IP address of the Warden server. Only these IP addresses will be allowed to make callback # requests
-$conf['warden_public_allow_ips'] = '83.136.254.41,2a04:3541:1000:500:d456:61ff:fee3:7d8d';
+// IP addresses of the Warden server allowed to make callback requests.
+$conf['warden_public_allow_ips'] = '35.228.188.78,35.228.81.50';
+$conf['warden_match_contrib'] = TRUE;
 
 /**
  * Add the domain module setup routine.

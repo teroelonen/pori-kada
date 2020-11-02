@@ -1,7 +1,7 @@
 #!/bin/bash
 set -exu
 
-LOCAL=@"$LANDO_APP_NAME".local
+LOCAL=@pori.local
 
 # Update local database.
 drush "$LOCAL" updb -y
@@ -21,9 +21,13 @@ drush "$LOCAL" fra -y
 drush "$LOCAL" en -y stage_file_proxy update devel
 drush "$LOCAL" vset stage_file_proxy_origin 'https://www.pori.fi'
 
+# Disable production modules.
+drush "$LOCAL" dis -y warden
+
 # Set site email address to admin@example.com
 drush "$LOCAL" vset site_mail "admin@example.com"
 
+drush "$LOCAL" vset file_private_path 'sites/default/files/private'
 
 drush "$LOCAL" vset simplesamlphp_auth_installdir "/app/web/simplesaml"
 
