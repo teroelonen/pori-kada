@@ -51,7 +51,7 @@
         name: "Run Simplesaml daily tasks"
         minute: "02"
         hour: "0"
-        job: "php -d max_execution_time=120 -d memory_limit=600M /var/www/pori.prod.wunder.io/current/conf/simplesaml/modules/cron/bin/cron.php -t daily"
+        job: 'curl --silent "https://www.pori.fi/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" > /dev/null 2>&1'
         state: "present"
         user: nginx
       tags: ['cron']
@@ -62,7 +62,7 @@
       cron:
         name: "Run Simplesaml hourly tasks"
         minute: "0"
-        job: "php -d max_execution_time=120 -d memory_limit=600M /var/www/pori.prod.wunder.io/current/conf/simplesaml/modules/cron/bin/cron.php -t hourly"
+        job: 'curl --silent "https://www.pori.fi/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=hourly" > /dev/null 2>&1'
         state: "present"
         user: nginx
       tags: ['cron']
