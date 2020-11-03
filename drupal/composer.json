@@ -254,7 +254,7 @@
         "drupal/entityqueue": "^1.5",
         "drupal/entityreference": "^1.5",
         "drupal/entityreference_prepopulate": "^1.5",
-        "drupal/eu_cookie_compliance": "^1.31",
+        "drupal/eu_cookie_compliance": "^1.35",
         "drupal/expire": "^2.0-rc4",
         "drupal/facetapi": "^1.6",
         "drupal/facetapi_bonus": "^1.3",
