@@ -3,7 +3,7 @@
     attach: function(context) {
       var agreed = false;
       if (Drupal.eu_cookie_compliance !== undefined) {
-        if (Drupal.eu_cookie_compliance.hasAgreed() === true) {
+        if (Drupal.eu_cookie_compliance.hasAgreed('marketing_cookies') === true) {
           agreed = true;
         }
       }
