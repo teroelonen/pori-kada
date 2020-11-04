@@ -11,6 +11,15 @@
 function pori_configuration_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer EU Cookie Compliance categories'.
+  $permissions['administer EU Cookie Compliance categories'] = array(
+    'name' => 'administer EU Cookie Compliance categories',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'eu_cookie_compliance',
+  );
+
   // Exported permission: 'administer EU Cookie Compliance popup'.
   $permissions['administer EU Cookie Compliance popup'] = array(
     'name' => 'administer EU Cookie Compliance popup',
