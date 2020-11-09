@@ -128,6 +128,28 @@ function pori_configuration_responsive_menus_execute_alter(&$settings) {
 }
 
 function pori_configuration_page_alter(&$page) {
+  // Add overrides to cookie consent theme.
+  drupal_add_css(
+    "
+    .eu-cookie-compliance-save-preferences-button {
+      background-color: black;
+      color: white;
+      text-shadow: none;
+      background-image: none;
+    }
+    @media (min-width: 700px) {
+      #popup-text { 
+        width: 48%; 
+        margin-right: 2%;
+      }
+      .consent-wrapper {
+        width: 50%;
+        float: right;
+        clear: none;
+      }
+    }
+    ", array('type' => 'inline')
+  );
   $domain = domain_get_domain();
   $args = arg();
   if (!empty($args[0]) && $args[0] == 'admin') {
