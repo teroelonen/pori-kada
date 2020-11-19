@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b77f82991b47c3710dfc279e80039302",
+    "content-hash": "6e30c794c85c230f8e8159d72e1970f4",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -3047,23 +3047,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.73.0",
+            "version": "7.74.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.73"
+                "reference": "7.74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.73.zip",
-                "reference": "7.73",
-                "shasum": "253212fb23a2d23daa3292a1d64ac9e44cfe207c"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.74.zip",
+                "reference": "7.74",
+                "shasum": "904df531173b8e90a6f518fc02e312b8e70b8f3d"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.73",
-                    "datestamp": "1600280131",
+                    "version": "7.74",
+                    "datestamp": "1605721899",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11512,8 +11512,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-3.23",
-                    "datestamp": "1557505381",
+                    "version": "7.x-3.24",
+                    "datestamp": "1583615729",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
