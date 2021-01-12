@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1084b9f15c436543912e83d12aa3de80",
+    "content-hash": "6e30c794c85c230f8e8159d72e1970f4",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -3000,23 +3000,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.73.0",
+            "version": "7.75.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.73"
+                "reference": "7.75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.73.zip",
-                "reference": "7.73",
-                "shasum": "253212fb23a2d23daa3292a1d64ac9e44cfe207c"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.75.zip",
+                "reference": "7.75",
+                "shasum": "cd1eaee1b26acd53824c5d42d1bc93d64af026f2"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.73",
-                    "datestamp": "1600280131",
+                    "version": "7.75",
+                    "datestamp": "1606361101",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

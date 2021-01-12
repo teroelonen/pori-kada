@@ -241,7 +241,7 @@
         "drupal/domain_views": "1.x-dev",
         "drupal/domaincontext": "^1.0",
         "drupal/domains_metatag": "^1.1",
-        "drupal/drupal": "^7.73",
+        "drupal/drupal": "^7.74",
         "drupal/ds": "^2.16",
         "drupal/eck": "2.x-dev",
         "drupal/elysia_cron": "^2.7",

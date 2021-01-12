@@ -57,6 +57,28 @@
         user: www-admin
       tags: ['cron']
 
+    # Run the simplesaml daily cron
+    - name: "Run Simplesaml daily crontasks."
+      cron:
+        name: "Run Simplesaml daily tasks"
+        minute: "02"
+        hour: "0"
+        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" --user pori:kada > /dev/null 2>&1'
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: drupal_web_root is defined
+
+    # Run the simplesaml hourly cron
+    - name: "Run Simplesaml hourly crontasks."
+      cron:
+        name: "Run Simplesaml hourly tasks"
+        minute: "0"
+        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" --user pori:kada > /dev/null 2>&1'
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: drupal_web_root is defined
 
   vars:
     wkv_site_env: stage
