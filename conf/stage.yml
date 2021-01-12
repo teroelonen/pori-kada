@@ -63,7 +63,7 @@
         name: "Run Simplesaml daily tasks"
         minute: "02"
         hour: "0"
-        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" > /dev/null 2>&1'
+        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" --user pori:kada > /dev/null 2>&1'
         state: "present"
         user: nginx
       tags: ['cron']
@@ -74,7 +74,7 @@
       cron:
         name: "Run Simplesaml hourly tasks"
         minute: "0"
-        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" > /dev/null 2>&1'
+        job: 'curl --silent "https://pori.stage.wunder.io/simplesaml/module.php/cron/cron.php?key=PunainenTupa55&tag=daily" --user pori:kada > /dev/null 2>&1'
         state: "present"
         user: nginx
       tags: ['cron']
