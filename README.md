@@ -7,8 +7,9 @@
 1. Install the [latest Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
 2. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
 3. Run `lando start`.
-4. Import data with `lando syncdb` (staging environment) or `lando syncdb prod` (production). Register your public key and connect to the required VPN first.
-5. Run `lando update` to update database, revert the features and enable development modules.
+4. Compile the themes with `lando compile`.
+5. Import data with `lando syncdb` (staging environment) or `lando syncdb prod` (production). Register your public key and connect to the required VPN first.
+6. Run `lando update` to update database, revert the features and enable development modules.
 
 ### Local sites with drush site aliases
 
@@ -32,6 +33,7 @@
 Full commands/tools overview is available by running `lando`. Custom tools:
 
 - `lando build` - build the local site.
+- `lando compile` - compile the themes.
 - `lando npm`, `lando bower`, `lando gulp` - run frontend commands.
 - `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
   - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice web/sites/all/modules/contrib --extensions=php,inc,module,install`
@@ -42,7 +44,7 @@ Full commands/tools overview is available by running `lando`. Custom tools:
 
 ### Theming
 
-Themes are compiled during build time using `drupal/.lando/node.sh`. See also [drupal/web/sites/all/themes/custom/kada/README.md](drupal/web/sites/all/themes/custom/kada/README.md).
+Themes can be compiled by using `lando compile`. See also `drupal/.lando/node.sh` & [drupal/web/sites/all/themes/custom/kada/README.md](drupal/web/sites/all/themes/custom/kada/README.md).
 
 ### Workflow
 
