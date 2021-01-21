@@ -4,6 +4,7 @@ config:
   php: '7.2'
   via: nginx
   webroot: web
+  composer_version: 1-latest
   drush: ^8
   xdebug: false
   config:
@@ -116,7 +117,7 @@ events:
   #   - appserver: /app/.lando/update.sh
 
 env_file:
-  - .lando/.env
+  - .lando/lando.env
 
 # Tested with Lando version.
-version: v3.0.14
+version: v3.0.23
