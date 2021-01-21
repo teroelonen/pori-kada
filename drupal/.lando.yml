@@ -4,6 +4,7 @@ config:
   php: '7.2'
   via: nginx
   webroot: web
+  composer_version: 1-latest
   drush: ^8
   xdebug: false
   config:
@@ -43,11 +44,6 @@ services:
     globals:
       gulp-cli: latest
       bower: latest
-    build:
-      - /app/.lando/node.sh
-  # redis:
-  #   type: redis
-  #   portforward: true
   solr:
     type: solr:5
     config:
@@ -58,10 +54,10 @@ tooling:
     description: Build the local site.
     cmd:
       - appserver: /app/.lando/build.sh
-  # build.sh:
-  #   description: Run build.sh commands.
-  #   cmd:
-  #     - appserver: /app/build.sh
+  compile:
+    description: Compile the themes.
+    cmd:
+      - node: /app/.lando/node.sh
   bower:
     service: node
   gulp:
@@ -116,7 +112,7 @@ events:
   #   - appserver: /app/.lando/update.sh
 
 env_file:
-  - .lando/.env
+  - .lando/lando.env
 
 # Tested with Lando version.
-version: v3.0.14
+version: v3.0.23
