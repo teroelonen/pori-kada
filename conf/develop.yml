@@ -72,6 +72,8 @@
 
   vars:
     wkv_site_env: develop
+    nginx_content_security_policy: "upgrade-insecure-requests; default-src https: data: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self'; base-uri 'self'; object-src 'self'; connect-src wss: https:; worker-src blob:;"
+    
 
     # You can set custom variables if the same value is used in multiple places so it can be easily changed here
     # You can use it anywhere after this using " {{ variable_name }}"
@@ -226,7 +228,7 @@
         value: "{{ warden_token }}"
 
     solr_memory: 512m
-    # Project-specific config for search_api_solr 
+    # Project-specific config for search_api_solr
     solr_drupal_files:
       # Standard stuff, inherited from WunderMachina
       - elevate.xml
@@ -239,7 +241,7 @@
       - solrcore.properties
       - stopwords.txt
       - synonyms.txt
-      # Customized 
+      # Customized
       - solr/schema.xml
 
     ## Monit ##
