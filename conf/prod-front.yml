@@ -71,6 +71,7 @@
   vars:
 
     partition_var_log: False
+    nginx_content_security_policy: "upgrade-insecure-requests; default-src https: data: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self'; base-uri 'self'; object-src 'self'; connect-src wss: https:; worker-src blob:;"
 
     memory_app: 6144 # In MB should be atleast 4x php_memory_limit
 
