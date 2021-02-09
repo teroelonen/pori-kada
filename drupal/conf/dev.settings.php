@@ -104,10 +104,10 @@ if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
 }
 
 // Set "domain space" that is necessary to handle redirects between domains
-define('DOMAIN_SPACE', 'dt-demo.turku.fi');
+// define('DOMAIN_SPACE', 'dt-demo.turku.fi');
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
-define('TURKUCALENDAR_BASE_URL', 'http://turkukalenteri.dt-demo.turku.fi/');
+// define('TURKUCALENDAR_BASE_URL', 'http://turkukalenteri.dt-demo.turku.fi/');
 
 // SimpleSAMLphp_auth Login Path
 $conf['simplesamlphp_auth_login_path'] = 'login_ad';
