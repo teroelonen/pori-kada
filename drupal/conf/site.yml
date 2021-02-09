@@ -91,7 +91,6 @@ develop:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -107,7 +106,6 @@ develop:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
@@ -132,8 +130,6 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
-
       # - shell: chmod -R a-w web
 
     update:
@@ -150,7 +146,6 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 prod:
@@ -175,7 +170,6 @@ prod:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -194,5 +188,4 @@ prod:
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - drush: cc all
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
