@@ -1,5 +1,13 @@
 # Pori project
 
+## Production environment
+
+- <https://www.pori.fi/>
+- <https://www.businesspori.fi/>
+- <https://www.visitpori.fi/>
+
+SimpleSAML endpoint: <https://www.pori.fi/simplesaml/module.php/core/loginuserpass.php>
+
 ## Local environment
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)
@@ -16,12 +24,6 @@
 - <https://pori.lndo.site>, alias `@pori.local`,
 - <https://businesspori.lndo.site>, alias `@pori.b.local`,
 - <https://visitpori.lndo.site>, alias `@pori.v.local`.
-
-### Production sites
-
-- <https://www.pori.fi/>, `@pori.prod`,
-- <https://www.businesspori.fi/>, `@pori.b.prod`,
-- <https://www.visitpori.fi/>, `@pori.v.prod`.
 
 ### [Services](https://docs.lando.dev/config/services.html)
 
