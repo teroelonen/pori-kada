@@ -40,7 +40,7 @@ Full commands/tools overview is available by running `lando`. Custom tools:
   - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
 - `lando syncdb <remote>` - synchronize local database with selected remote environment. Options: `stage` (default), `prod`.
 - `lando update` - apply required (database) updates.
-- `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
+- `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 
 ### Theming
 
