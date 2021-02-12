@@ -6,9 +6,10 @@ config:
   webroot: web
   composer_version: 1-latest
   drush: ^8
-  xdebug: false
+  xdebug: off
   config:
     vhosts: ./.lando/drupal7.conf
+    php: .lando/php.ini
 
 services:
   adminer:
@@ -30,6 +31,8 @@ services:
       environment:
         WKV_SITE_ENV: lando
         SAML_MEMCACHE_STORE: memcached
+        XDEBUG_MODE:
+        PHP_IDE_CONFIG: "serverName=appserver"
   database:
     type: mariadb:10.2
   mailhog:
@@ -82,15 +85,10 @@ tooling:
     description: Update local site with development settings.
     cmd:
       - appserver: /app/.lando/update.sh
-  xdebug-on:
-    service: appserver
-    description: Enables xdebug for nginx
-    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
-    user: root
-  xdebug-off:
-    service: appserver
-    description: Disables xdebug for nginx
-    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+  xdebug:
+    description: Loads Xdebug in the selected mode.
+    cmd:
+      - appserver: /app/.lando/xdebug.sh
     user: root
   yarn:
     service: node
