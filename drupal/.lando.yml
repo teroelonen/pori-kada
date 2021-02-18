@@ -21,10 +21,12 @@ services:
         - /app/.lando/adminer.sh
     portforward: true
   appserver:
-    # build_as_root:
-    #   - "apt-get update -y"
-    #   - "apt-get install python-yaml -y"
+    build_as_root:
+      - chmod -R a+w /app/web/
+      #  - "apt-get update -y"
+      #  - "apt-get install python-yaml -y"
     build:
+      - composer install
       - /app/.lando/build.sh
       # - /app/build.sh build lando
     overrides:
@@ -102,12 +104,6 @@ proxy:
     - pori-mail.lndo.site
   adminer:
     - pori-adminer.lndo.site
-
-events:
-  pre-start:
-    - appserver: composer install
-  # post-db-import:
-  #   - appserver: /app/.lando/update.sh
 
 env_file:
   - .lando/lando.env
