@@ -15,7 +15,7 @@ services:
   adminer:
     type: compose
     services:
-      image: dehy/adminer
+      image: dehy/adminer:4.7
       command: /bin/s6-svscan /etc/services.d
     run_as_root:
         - /app/.lando/adminer.sh
