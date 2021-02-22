@@ -185,7 +185,7 @@ function pori_configuration_init() {
           ->fields(array(
             'data' => $to_db,
           ))
-          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->condition('name', 'google_tag.container.businesspori_fi', '=')
           ->execute();
       }
     }
@@ -203,7 +203,7 @@ function pori_configuration_init() {
           ->fields(array(
             'data' => $to_db,
           ))
-          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->condition('name', 'google_tag.container.visitpori_fi', '=')
           ->execute();
       }
     }
@@ -242,7 +242,7 @@ function pori_configuration_init() {
           ->fields(array(
             'data' => $to_db,
           ))
-          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->condition('name', 'google_tag.container.businesspori_fi', '=')
           ->execute();
       }
     }
@@ -260,7 +260,7 @@ function pori_configuration_init() {
           ->fields(array(
             'data' => $to_db,
           ))
-          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->condition('name', 'google_tag.container.visitpori_fi', '=')
           ->execute();
       }
     }
