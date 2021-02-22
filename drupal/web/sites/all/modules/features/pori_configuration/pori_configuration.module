@@ -162,3 +162,129 @@ function pori_configuration_page_alter(&$page) {
     drupal_add_js(drupal_get_path('module', 'pori_configuration') . '/js/pixel.js', array('cache' => FALSE));
   }
 }
+
+function pori_configuration_init() {
+  // Pori.fi
+  $host = $_SERVER['HTTP_HOST'];
+  // Simulate prod by commenting out the below.
+  //$host = 'pori.fi';
+  $prod_hosts = array('pori.fi','businesspori.fi', 'visitpori.fi');
+
+  // Are we in prod?
+  $is_prod = in_array($host, $prod_hosts);
+
+  // If we are, then.
+  if ($is_prod) {
+    // Pori.fi
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.pori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-1';
+      $token = 'aALldsweWeGKdVo8lmD1rg';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+    // Business pori.
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.businesspori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-1';
+      $token = 'n2UyAwBVVTVOlkoHisOrNQ';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+    // Visitpori.fi.
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.visitpori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-1';
+      $token = 'adrkc4IT2ISRyXIbgfAkIQ';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+  }
+  // If not we use diff env's and tokens.
+  else {
+    // Pori.fi
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.pori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-5';
+      $token = 'eltW5Tl_tkJBBZ1Ur_fLaQ';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+    // Business pori.
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.businesspori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-4';
+      $token = 'nzqh8KqGGBMPsSJA5EpKZQ';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+    // Visitpori.fi.
+    $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.visitpori_fi'))->fetchField();
+    if (!empty($config)) {
+      $config = unserialize($config);
+      $env = 'env-5';
+      $token = '5tE1uGUMaTgyVBbaQmzqug';
+      if ($config['environment_id'] != $env) {
+        $config['environment_id'] = $env;
+        $config['environment_token'] = $token;
+        $to_db = serialize($config);
+        $status = db_update('gtag_config') // Table name no longer needs {}
+          ->fields(array(
+            'data' => $to_db,
+          ))
+          ->condition('name', 'google_tag.container.pori_fi', '=')
+          ->execute();
+      }
+    }
+  }
+}
