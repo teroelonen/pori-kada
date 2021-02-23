@@ -168,7 +168,7 @@ function pori_configuration_init() {
   $host = $_SERVER['HTTP_HOST'];
   // Simulate prod by commenting out the below.
   //$host = 'pori.fi';
-  $prod_hosts = array('pori.fi','businesspori.fi', 'visitpori.fi');
+  $prod_hosts = array('www.pori.fi','www.businesspori.fi', 'www.visitpori.fi');
 
   // Are we in prod?
   $is_prod = in_array($host, $prod_hosts);
