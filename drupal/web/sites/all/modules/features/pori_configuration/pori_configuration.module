@@ -272,7 +272,7 @@ function pori_configuration_init() {
     $config = db_query('SELECT data FROM {gtag_config} WHERE name = :name', array(':name' => 'google_tag.container.visitpori_fi'))->fetchField();
     if (!empty($config)) {
       $config = unserialize($config);
-      $env = 'env-5';
+      $env = 'env-4';
       $token = '5tE1uGUMaTgyVBbaQmzqug';
       if ($config['environment_id'] != $env) {
         $config['environment_id'] = $env;
