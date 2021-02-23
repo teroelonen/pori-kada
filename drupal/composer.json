@@ -525,6 +525,9 @@
                 "Enter drupal/ip_geoloc patch #0 description here": "patches/ip_geoloc_google_maps_version_bump.patch",
                 "Enter drupal/ip_geoloc patch #1 description here": "patches/ip_geoloc_update_current_location_marker_to_use_predefined_markers.patch"
             },
+            "drupal/google_tag": {
+                "Enter drupal/google_tag patch #0 description here": "patches/google_tag_no_cache.patch"
+            },
             "drupal/menu_block": {
                 "#3019808-4" : "https://www.drupal.org/files/issues/2019-02-27/undefined-index-fix-3019808-4.patch"
             },
