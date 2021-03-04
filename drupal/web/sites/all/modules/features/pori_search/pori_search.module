@@ -342,6 +342,9 @@ function pori_search_search_api_solr_documents_alter(array &$documents, SearchAp
       if(strlen($field_mobile['value']) == 13) {
         $split_phone = ' ' . substr($field_mobile['value'], 0, 4) . ' ' . substr($field_mobile['value'], 4, 2) . ' ' . substr($field_mobile['value'], 6, 3) . ' ' . substr($field_mobile['value'], 9, 4);
       }
+      if (stristr($field_mobile['value'], '+358')) {
+        $split_phone = ' 0' . substr($field_mobile['value'], 4, 200);
+      }
       $document->setField('tm_field_mobile_phone_work', $field_mobile['value'] . $split_phone, $field_mobile['boost']);
     }
   }
