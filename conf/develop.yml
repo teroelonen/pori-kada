@@ -72,7 +72,7 @@
 
   vars:
     wkv_site_env: develop
-    nginx_content_security_policy: "upgrade-insecure-requests; default-src https: data: 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self'; base-uri 'self'; object-src 'self'; connect-src wss: https:; worker-src blob:; child-src blob:;"
+    nginx_content_security_policy: "upgrade-insecure-requests; default-src https: data: 'unsafe-inline' 'unsafe-eval' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'self'; connect-src wss: https:; worker-src blob:; child-src blob:; frame-src https: blob:;"
     
 
     # You can set custom variables if the same value is used in multiple places so it can be easily changed here
