@@ -21,6 +21,9 @@ function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
+  if ($module == "google_tag" && $api == "") {
+    return array("version" => "");
+  }
   if ($module == "openlayers" && $api == "openlayers_layers") {
     return array("version" => "1");
   }

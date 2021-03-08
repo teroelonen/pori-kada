@@ -122,3 +122,11 @@ function pori_configuration_update_7114() {
     ->condition('type', 'module')
     ->execute();
 }
+
+/**
+ * Disable GA modules
+ */
+function pori_configuration_update_7116() {
+  module_disable(array('domain_analytics', 'googleanalytics'));
+  drupal_uninstall_modules(array('domain_analytics', 'googleanalytics'));
+}

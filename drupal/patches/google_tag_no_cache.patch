@@ -1,0 +1,22 @@
+diff --git a/includes/entity/container.inc b/includes/entity/container.inc
+index 35e7141..6a8f00f 100644
+--- a/includes/entity/container.inc
++++ b/includes/entity/container.inc
+@@ -539,7 +539,7 @@ EOS;
+ 
+     // This omits the query string, but drupal adds it.
+     // This outputs defer="defer"; see drupal_get_js()
+-    drupal_add_js($url, array('group' => JS_LIBRARY * 2, 'requires_jquery' => FALSE, 'defer' => TRUE));
++    drupal_add_js($url, array('group' => JS_LIBRARY * 2, 'requires_jquery' => FALSE, 'defer' => TRUE, 'cache' => FALSE));
+ 
+     // This approach uses weight only but does not group the script tags so
+     // difficult to put this at or near top of them.
+@@ -575,7 +575,7 @@ EOS;
+     $uri = $this->snippetURI($type);
+     $url = drupal_realpath($uri);
+     $contents = @file_get_contents($url);
+-    drupal_add_js($contents, array('type' => 'inline', 'group' => JS_LIBRARY * 2, 'requires_jquery' => FALSE));
++    drupal_add_js($contents, array('type' => 'inline', 'group' => JS_LIBRARY * 2, 'requires_jquery' => FALSE, 'cache' => FALSE));
+ 
+     // This approach uses weight only but does not group the script tags so
+     // difficult to put this at or near top of them.
