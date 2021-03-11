@@ -19,12 +19,13 @@ $databases['default']['default'] = [
 // Salt for one-time login links and cancel links, form tokens, etc.
 $drupal_hash_salt = md5(getenv('LANDO_HOST_IP'));
 
-$conf['stage_file_proxy_origin'] = "https://www.pori.fi";
+$conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
 
-$conf['file_temporary_path'] = "/tmp";
+$conf['file_temporary_path'] = '/tmp';
+$conf['file_private_path'] = 'sites/default/files/private';
 
 // CACHING
-$conf['cache_backends'][] = "sites/all/modules/contrib/memcache/memcache.inc";
+$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['cache_default_class'] = 'MemCacheDrupal';
 $conf['memcache_key_prefix'] = 'wk';
@@ -33,7 +34,7 @@ $conf['memcache_servers'] = array (
   'memcached:11211' => 'default',
 );
 
-$conf['cache_prefix']['default'] = "kada_";
+$conf['cache_prefix']['default'] = 'kada_';
 
 // // VARNISH
 // $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
