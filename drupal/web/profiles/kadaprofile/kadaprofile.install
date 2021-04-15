@@ -867,3 +867,15 @@ function kadaprofile_update_7137() {
 function kadaprofile_update_7138() {
   module_enable(['kada_password_changer']);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Disables Hotjar module
+ */
+function kadaprofile_update_7139() {
+  $modules = array('hotjar');
+
+  module_disable($modules);
+
+}
