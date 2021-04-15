@@ -85,10 +85,11 @@ develop:
     build:
       - shell: chmod -R a+w web
       - make
+      - shell: chmod -R a+w conf/simplesaml/metadata
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      # - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -101,10 +102,11 @@ develop:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - shell: chmod -R a+w conf/simplesaml/metadata
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      # - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
