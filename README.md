@@ -25,8 +25,8 @@
 
 ### [Services](https://docs.lando.dev/config/services.html)
 
-- <https://adminer-pori.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
-- <https://mail-pori.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
+- <http://pori-adminer.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
+- <http://pori-mail.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
 
 ### [Tools](https://docs.lando.dev/config/tooling.html)
 

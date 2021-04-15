@@ -23,8 +23,6 @@ services:
   appserver:
     build_as_root:
       - chmod -R a+w /app/web/
-      #  - "apt-get update -y"
-      #  - "apt-get install python-yaml -y"
     build:
       - composer install
       - /app/.lando/build.sh
