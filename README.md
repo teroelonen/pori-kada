@@ -1,5 +1,10 @@
 # Pori project
 
+## SimpleSAML
+
+Login path: <https://pori.fi/login_ad>
+Admin path: <https://pori.fi/simplesaml>
+
 ## Local environment
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)
