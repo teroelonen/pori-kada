@@ -126,7 +126,7 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
 
       # - shell: chmod -R a-w web
 
@@ -144,7 +144,7 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 prod:
@@ -166,7 +166,7 @@ prod:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -183,7 +183,6 @@ prod:
       - shell: chmod -R a-w web
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
-      - drush: cc all
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
