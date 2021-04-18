@@ -80,9 +80,6 @@ develop:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/simplesaml: web/simplesamlphp
-    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -91,7 +88,7 @@ develop:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -107,7 +104,7 @@ develop:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
@@ -121,9 +118,6 @@ stage:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/simplesaml: web/simplesamlphp
-    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -132,7 +126,7 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
 
       # - shell: chmod -R a-w web
 
@@ -150,7 +144,7 @@ stage:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 prod:
@@ -164,9 +158,6 @@ prod:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/simplesaml: web/simplesamlphp
-    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -175,7 +166,7 @@ prod:
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
@@ -192,7 +183,6 @@ prod:
       - shell: chmod -R a-w web
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
-      - drush: cc all
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R nginx:nginx conf/simplesaml/metadata/metarefresh-pori
+      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
