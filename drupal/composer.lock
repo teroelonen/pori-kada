@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8a6eabd4967fa4ea57a8fc641de2ac4",
+    "content-hash": "29e214126c9402c900d6b889cf828620",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -3064,23 +3064,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.78.0",
+            "version": "7.80.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.78"
+                "reference": "7.80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.78.zip",
-                "reference": "7.78",
-                "shasum": "1358a9b8022877fc692b62eb19d7efb0d3f85ee4"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.80.zip",
+                "reference": "7.80",
+                "shasum": "a3bc28036b43ec44deda643182bcdc3e4c28aff0"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.78",
-                    "datestamp": "1611163112",
+                    "version": "7.80",
+                    "datestamp": "1619022873",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3122,10 +3122,6 @@
                     "homepage": "https://www.drupal.org/user/35733"
                 },
                 {
-                    "name": "cilefen",
-                    "homepage": "https://www.drupal.org/user/1850070"
-                },
-                {
                     "name": "drumm",
                     "homepage": "https://www.drupal.org/user/3064"
                 },
@@ -3144,10 +3140,6 @@
                 {
                     "name": "mcdruid",
                     "homepage": "https://www.drupal.org/user/255969"
-                },
-                {
-                    "name": "plach",
-                    "homepage": "https://www.drupal.org/user/183211"
                 },
                 {
                     "name": "webchick",
