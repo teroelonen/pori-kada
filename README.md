@@ -1,5 +1,10 @@
 # Pori project
 
+## SimpleSAML
+
+Login path: <https://pori.fi/login_ad>
+Admin path: <https://pori.fi/simplesaml>
+
 ## Local environment
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)
@@ -25,8 +30,8 @@
 
 ### [Services](https://docs.lando.dev/config/services.html)
 
-- <https://adminer-pori.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
-- <https://mail-pori.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
+- <http://pori-adminer.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
+- <http://pori-mail.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
 
 ### [Tools](https://docs.lando.dev/config/tooling.html)
 
@@ -53,3 +58,11 @@ Note: We use [Wunderflow](http://wunderflow.wunder.io/) as our git workflow.
 All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
+
+### Provisioning
+
+Perform the following tasks in the project root folder to set up the Lando-based provisioning tool:
+
+1. create the file `ansible.vault` and save it with Ansible vault password (`Pori ansible-vault key` in the LastPass),
+2. run `lando start`,
+3. use `lando provision` for help and `lando provision <task>` for provisioning tasks.

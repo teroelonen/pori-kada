@@ -242,7 +242,7 @@
         "drupal/domain_views": "1.x-dev",
         "drupal/domaincontext": "^1.0",
         "drupal/domains_metatag": "^1.1",
-        "drupal/drupal": "^7.74",
+        "drupal/drupal": "^7.80",
         "drupal/ds": "^2.16",
         "drupal/eck": "2.x-dev",
         "drupal/elysia_cron": "^2.7",
@@ -390,7 +390,6 @@
         "phayes/geophp": "dev-master",
         "proj4js/proj4js": "^1.1.0",
         "select2/select2": "^4.0.5",
-        "simplesamlphp/simplesamlphp": "^1.18",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0",
         "woothemes/flexslider": "^2.2.2"
@@ -438,7 +437,6 @@
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
         ],
         "post-autoload-dump": [
-          "DrupalProject\\composer\\ScriptHandler::setupSimpleSaml",
           "DrupalProject\\composer\\ScriptHandler::setupPing"
         ]
     },
