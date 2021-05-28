@@ -152,6 +152,10 @@ function pori_configuration_page_alter(&$page) {
   );
   $domain = domain_get_domain();
   $args = arg();
+  drupal_add_css('.CookieDeclaration {display: none;}', 'inline');
+  // Add CookiebotCookie accessibility script.
+  drupal_add_js(drupal_get_path('module', 'pori_configuration_feature') . '/js/cookiebot_accessibility.js');
+
   if (!empty($args[0]) && $args[0] == 'admin') {
     $admin = TRUE;
   }
