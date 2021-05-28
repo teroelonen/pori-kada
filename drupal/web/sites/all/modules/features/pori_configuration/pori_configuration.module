@@ -138,8 +138,8 @@ function pori_configuration_page_alter(&$page) {
       background-image: none;
     }
     @media (min-width: 700px) {
-      #popup-text { 
-        width: 48%; 
+      #popup-text {
+        width: 48%;
         margin-right: 2%;
       }
       .consent-wrapper {
@@ -154,7 +154,7 @@ function pori_configuration_page_alter(&$page) {
   $args = arg();
   drupal_add_css('.CookieDeclaration {display: none;}', 'inline');
   // Add CookiebotCookie accessibility script.
-  drupal_add_js(drupal_get_path('module', 'pori_configuration_feature') . '/js/cookiebot_accessibility.js');
+  drupal_add_js(drupal_get_path('module', 'pori_configuration') . '/js/cookiebot_accessibility.js');
 
   if (!empty($args[0]) && $args[0] == 'admin') {
     $admin = TRUE;
