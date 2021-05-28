@@ -9,7 +9,6 @@ function kada_preprocess_html(&$variables) {
   $domain = domain_get_domain();
   $group = og_context();
 
-  dsm($domain['machine_name']);
   switch ($domain['machine_name']) {
     case 'businesspori_fi':
       $variables['cookiebot_head'] = '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a64f5e13-0c70-4d9d-bd65-64adff59bc3d" type="text/javascript" async></script>';
