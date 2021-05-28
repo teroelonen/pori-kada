@@ -54,7 +54,7 @@
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
   <head>
-    <?php print $head; ?>
+    <?php dsm($cookiebot_head); print $cookiebot_head . $head; ?>
     <title><?php print $head_title; ?></title>
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
@@ -89,5 +89,6 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+    <?php print $cookiebot_footer; ?>
   </body>
 </html>
