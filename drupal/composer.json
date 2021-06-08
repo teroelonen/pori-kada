@@ -18,13 +18,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/ckeditor",
-                "version": "4.14.0",
+                "version": "4.16.1",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "ckeditor"
                 },
                 "dist": {
-                    "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.14.0/ckeditor_4.14.0_full.zip",
+                    "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.16.1/ckeditor_4.16.1_full.zip",
                     "type": "zip"
                 }
             }
@@ -33,13 +33,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/lineutils",
-                "version": "4.4.8",
+                "version": "4.16.1",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "ckeditor/plugins/lineutils"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip",
+                    "url": "https://download.ckeditor.com/lineutils/releases/lineutils_4.16.1.zip",
                     "type": "zip"
                 }
             }
@@ -48,13 +48,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/widget",
-                "version": "4.4.8",
+                "version": "4.16.1",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "ckeditor/plugins/widget"
                 },
                 "dist": {
-                    "url": "https://download.ckeditor.com/widget/releases/widget_4.4.8.zip",
+                    "url": "https://download.ckeditor.com/widget/releases/widget_4.16.1.zip",
                     "type": "zip"
                 }
             }
@@ -197,9 +197,9 @@
         "ext-openssl": "*",
         "ext-pdo": "*",
         "ext-xml": "*",
-        "ckeditor/ckeditor": "^4.4.5",
-        "ckeditor/lineutils": "^4.4.8",
-        "ckeditor/widget": "^4.4.8",
+        "ckeditor/ckeditor": "4.16.1",
+        "ckeditor/lineutils": "4.16.1",
+        "ckeditor/widget": "4.16.1",
         "composer/installers": "^1.2",
         "composer/semver": "^1.4",
         "cweagans/composer-patches": "^1.6",

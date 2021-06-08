@@ -23,7 +23,7 @@ function kada_editorial_tools_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'DriveTurku Admin Content';
+  $handler->display->display_options['title'] = 'Sisältö';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access content overview';
@@ -31,9 +31,18 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Show content';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Näytä sisältö';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
@@ -114,17 +123,17 @@ function kada_editorial_tools_feature_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Content: Content author */
+  /* Relationship: Sisältö: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Relationship: Content: Theme (field_theme) */
+  /* Relationship: Sisältö: Theme (field_theme) */
   $handler->display->display_options['relationships']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['relationships']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['relationships']['field_theme_tid']['field'] = 'field_theme_tid';
-  $handler->display->display_options['relationships']['field_theme_tid']['label'] = 'theme';
-  /* Field: Content: Event type */
+  $handler->display->display_options['relationships']['field_theme_tid']['label'] = 'teema';
+  /* Kenttä: Sisältö: Event type */
   $handler->display->display_options['fields']['field_date_type']['id'] = 'field_date_type';
   $handler->display->display_options['fields']['field_date_type']['table'] = 'field_data_field_date_type';
   $handler->display->display_options['fields']['field_date_type']['field'] = 'field_date_type';
@@ -134,7 +143,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['field_date_type']['alter']['text'] = ' ([field_date_type])';
   $handler->display->display_options['fields']['field_date_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_type']['type'] = 'i18n_list_default';
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -142,10 +151,11 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title][field_date_type]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Event date */
+  /* Kenttä: Sisältö: Event date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = 'Tapahtuman ajankohta';
   $handler->display->display_options['fields']['field_event_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
     'format_type' => 'short',
@@ -154,38 +164,39 @@ function kada_editorial_tools_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Theme */
+  /* Kenttä: Sisältö: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
   $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = 'Teema';
   $handler->display->display_options['fields']['field_theme']['delta_offset'] = '0';
-  /* Field: Content: Type */
+  /* Kenttä: Sisältö: Tyyppi */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: User: Name */
+  /* Kenttä: Käyttäjä: Nimi */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Author';
-  /* Field: Content: Published status */
+  $handler->display->display_options['fields']['name']['label'] = 'Tekijä';
+  /* Kenttä: Sisältö: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content: Updated date */
+  /* Kenttä: Sisältö: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed']['label'] = 'Updated';
+  $handler->display->display_options['fields']['changed']['label'] = 'Päivitetty';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Content: Language */
+  /* Kenttä: Sisältö: Kieli */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
-  /* Field: Content: edit link */
+  /* Kenttä: Content: edit link */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -193,14 +204,14 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'node/[nid]/edit';
-  $handler->display->display_options['fields']['nid']['alter']['alt'] = 'Edit';
+  $handler->display->display_options['fields']['nid']['alter']['alt'] = 'Muokkaa';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Updated date */
+  /* Sort criterion: Sisältö: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  /* Filter criterion: Content: Title */
+  /* Filter criterion: Sisältö: Otsikko */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -208,7 +219,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Otsikko';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -218,7 +229,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: Name */
+  /* Filter criterion: Käyttäjä: Nimi */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -227,7 +238,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['uid']['group'] = 1;
   $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Tekijä';
   $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
   $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'author';
   $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
@@ -237,14 +248,14 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Tyyppi';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
@@ -254,7 +265,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Published status */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -262,7 +273,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['status_1']['group'] = 1;
   $handler->display->display_options['filters']['status_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status_1']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status_1']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status_1']['expose']['label'] = 'Julkaistu';
   $handler->display->display_options['filters']['status_1']['expose']['operator'] = 'status_1_op';
   $handler->display->display_options['filters']['status_1']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status_1']['expose']['remember_roles'] = array(
@@ -272,7 +283,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -283,7 +294,7 @@ function kada_editorial_tools_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['language']['exposed'] = TRUE;
   $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
-  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
   $handler->display->display_options['filters']['language']['expose']['remember_roles'] = array(
@@ -296,7 +307,7 @@ function kada_editorial_tools_feature_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Sisältö: Title (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -307,7 +318,7 @@ function kada_editorial_tools_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['language_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['language_1']['expose']['operator_id'] = 'language_1_op';
-  $handler->display->display_options['filters']['language_1']['expose']['label'] = 'Translated title language';
+  $handler->display->display_options['filters']['language_1']['expose']['label'] = 'Otsikon kieli';
   $handler->display->display_options['filters']['language_1']['expose']['operator'] = 'language_1_op';
   $handler->display->display_options['filters']['language_1']['expose']['identifier'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['expose']['remember_roles'] = array(
@@ -324,7 +335,7 @@ function kada_editorial_tools_feature_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Event type */
+  /* Kenttä: Sisältö: Event type */
   $handler->display->display_options['fields']['field_date_type']['id'] = 'field_date_type';
   $handler->display->display_options['fields']['field_date_type']['table'] = 'field_data_field_date_type';
   $handler->display->display_options['fields']['field_date_type']['field'] = 'field_date_type';
@@ -334,7 +345,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['field_date_type']['alter']['text'] = ' ([field_date_type])';
   $handler->display->display_options['fields']['field_date_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_type']['type'] = 'i18n_list_default';
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -342,10 +353,11 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title][field_date_type]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Event date */
+  /* Kenttä: Sisältö: Event date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
   $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = 'Tapahtuman ajankohta';
   $handler->display->display_options['fields']['field_event_date']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
     'format_type' => 'short',
@@ -354,44 +366,45 @@ function kada_editorial_tools_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Theme */
+  /* Kenttä: Sisältö: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
   $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = 'Teema';
   $handler->display->display_options['fields']['field_theme']['delta_offset'] = '0';
-  /* Field: Content: Type */
+  /* Kenttä: Sisältö: Tyyppi */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: User: Name */
+  /* Kenttä: Käyttäjä: Nimi */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Author';
-  /* Field: Content: Published status */
+  $handler->display->display_options['fields']['name']['label'] = 'Tekijä';
+  /* Kenttä: Sisältö: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content: Updated date */
+  /* Kenttä: Sisältö: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed']['label'] = 'Updated';
+  $handler->display->display_options['fields']['changed']['label'] = 'Päivitetty';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Content: Language */
+  /* Kenttä: Sisältö: Kieli */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
-  /* Field: Domains: Site name */
+  /* Kenttä: Domainit: Sivuston nimi */
   $handler->display->display_options['fields']['sitename']['id'] = 'sitename';
   $handler->display->display_options['fields']['sitename']['table'] = 'domain';
   $handler->display->display_options['fields']['sitename']['field'] = 'sitename';
   $handler->display->display_options['fields']['sitename']['label'] = 'Domain';
   $handler->display->display_options['fields']['sitename']['link_to_site'] = 0;
-  /* Field: Content: edit link */
+  /* Kenttä: Content: edit link */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -399,11 +412,11 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'node/[nid]/edit';
-  $handler->display->display_options['fields']['nid']['alter']['alt'] = 'Edit';
+  $handler->display->display_options['fields']['nid']['alter']['alt'] = 'Muokkaa';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Title */
+  /* Filter criterion: Sisältö: Otsikko */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -411,7 +424,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Otsikko';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -421,7 +434,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: Name */
+  /* Filter criterion: Käyttäjä: Nimi */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -430,7 +443,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['uid']['group'] = 1;
   $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Tekijä';
   $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
   $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'author';
   $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
@@ -440,14 +453,14 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Tyyppi';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
@@ -457,7 +470,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Published status */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -465,7 +478,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['filters']['status_1']['group'] = 1;
   $handler->display->display_options['filters']['status_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status_1']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status_1']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status_1']['expose']['label'] = 'Julkaistu';
   $handler->display->display_options['filters']['status_1']['expose']['operator'] = 'status_1_op';
   $handler->display->display_options['filters']['status_1']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status_1']['expose']['remember_roles'] = array(
@@ -475,7 +488,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -486,7 +499,7 @@ function kada_editorial_tools_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['language']['exposed'] = TRUE;
   $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
-  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
   $handler->display->display_options['filters']['language']['expose']['remember_roles'] = array(
@@ -547,44 +560,50 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Updated date */
+  /* Kenttä: Sisältö: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
-  $handler->display->display_options['fields']['changed']['label'] = 'Updated';
+  $handler->display->display_options['fields']['changed']['label'] = 'Päivitetty';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Content: Language */
+  /* Kenttä: Sisältö: Kieli */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['label'] = '';
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
-  /* Field: Content: Link to edit content */
+  /* Kenttä: Sisältö: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Field: Content: Link to delete content */
+  /* Kenttä: Sisältö: Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['label'] = '';
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Author uid */
+  /* Contextual filter: Sisältö: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
   $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
@@ -594,41 +613,41 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['defaults']['filters'] = FALSE;
   $translatables['kada_admin_content'] = array(
     t('Master'),
-    t('DriveTurku Admin Content'),
+    t('Sisältö'),
     t('more'),
-    t('Show content'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
+    t('Näytä sisältö'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
+    t('Tuloksia sivulla'),
     t('- All -'),
     t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('« ensimmäinen'),
+    t('‹ edellinen'),
+    t('seuraava ›'),
+    t('viimeinen »'),
     t('author'),
-    t('theme'),
+    t('teema'),
     t(' ([field_date_type])'),
-    t('Title'),
+    t('Otsikko'),
     t('[title][field_date_type]'),
-    t('Event date'),
-    t('Theme'),
-    t('Type'),
-    t('Author'),
+    t('Tapahtuman ajankohta'),
+    t('Teema'),
+    t('Tyyppi'),
+    t('Tekijä'),
     t('Published status'),
-    t('Updated'),
-    t('Language'),
+    t('Päivitetty'),
+    t('Kieli'),
     t('node/[nid]/edit'),
-    t('Edit'),
-    t('Published'),
-    t('Translated title language'),
+    t('Muokkaa'),
+    t('Julkaistu'),
+    t('Otsikon kieli'),
     t('Page'),
     t('Domain'),
     t('My Content block'),
     t('My Content'),
-    t('All'),
+    t('Kaikki'),
   );
   $export['kada_admin_content'] = $view;
 
@@ -644,17 +663,27 @@ function kada_editorial_tools_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'People';
+  $handler->display->display_options['title'] = 'Käyttäjät';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Field: Bulk operations: User */
+  /* Kenttä: Bulk operations: Käyttäjä */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_user';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -671,66 +700,66 @@ function kada_editorial_tools_feature_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: User: Name */
+  /* Kenttä: Käyttäjä: Nimi */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: User: E-mail */
+  /* Kenttä: Käyttäjä: Sähköposti */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
-  /* Field: User: Roles */
+  /* Kenttä: Käyttäjä: Käyttäjäroolit */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
   $handler->display->display_options['fields']['rid']['type'] = 'ul';
-  /* Field: User: Active status */
+  /* Kenttä: Käyttäjä: Active status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: User: Created date */
+  /* Kenttä: Käyttäjä: Created date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Member since';
+  $handler->display->display_options['fields']['created']['label'] = 'Käyttäjätili luotu';
   $handler->display->display_options['fields']['created']['date_format'] = 'kada_date_only';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: User: Last access */
+  /* Kenttä: Käyttäjä: Viimeksi paikalla */
   $handler->display->display_options['fields']['access']['id'] = 'access';
   $handler->display->display_options['fields']['access']['table'] = 'users';
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'today time ago';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'short';
-  /* Field: User: Link to edit user */
+  /* Kenttä: Käyttäjä: Link to edit user */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Sort criterion: User: Created date */
+  /* Sort criterion: Käyttäjä: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: User: Active status */
+  /* Filter criterion: Käyttäjä: Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Name (raw) */
+  /* Filter criterion: Käyttäjä: Name (raw) */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'users';
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['operator'] = 'contains';
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Nimi';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
@@ -741,13 +770,13 @@ function kada_editorial_tools_feature_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: User: Roles */
+  /* Filter criterion: Käyttäjä: Käyttäjäroolit */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
-  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roles';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Käyttäjäroolit';
   $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
   $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
@@ -769,28 +798,28 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['kada_admin_people'] = array(
     t('Master'),
-    t('People'),
+    t('Käyttäjät'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
+    t('Tuloksia sivulla'),
     t('- All -'),
     t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('User'),
-    t('- Choose an operation -'),
-    t('Name'),
-    t('E-mail'),
-    t('Roles'),
+    t('« ensimmäinen'),
+    t('‹ edellinen'),
+    t('seuraava ›'),
+    t('viimeinen »'),
+    t('Käyttäjä'),
+    t('- Valitse toimenpide -'),
+    t('Nimi'),
+    t('Sähköposti'),
+    t('Käyttäjäroolit'),
     t('Active status'),
-    t('Member since'),
-    t('Last access'),
+    t('Käyttäjätili luotu'),
+    t('Viimeksi paikalla'),
     t('Page'),
   );
   $export['kada_admin_people'] = $view;
