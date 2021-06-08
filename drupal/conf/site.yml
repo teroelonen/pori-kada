@@ -101,7 +101,7 @@ develop:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: chmod -R a+x web/sites/default/libraries/ckeditor
+      - shell: chmod -R a+x web/sites/all/libraries/ckeditor
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
@@ -142,7 +142,7 @@ stage:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: chmod -R a+x web/sites/default/libraries/ckeditor
+      - shell: chmod -R a+x web/sites/all/libraries/ckeditor
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
@@ -183,7 +183,7 @@ prod:
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: chmod -R a+x web/sites/default/libraries/ckeditor
+      - shell: chmod -R a+x web/sites/all/libraries/ckeditor
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
       - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
