@@ -102,6 +102,7 @@ develop:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - shell: chmod -R a+w conf/simplesaml/metadata
       - shell: chmod -R a+x web/sites/all/libraries/ckeditor
       - shell: touch conf/simplesaml/modules/cron/enable
       - shell: touch conf/simplesaml/modules/metarefresh/enable
