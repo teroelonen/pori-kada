@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29e214126c9402c900d6b889cf828620",
+    "content-hash": "ccea047f38fd36631752cc48c11b06c7",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.14.0",
+            "version": "4.16.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.14.0/ckeditor_4.14.0_full.zip"
+                "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.16.1/ckeditor_4.16.1_full.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -20,10 +20,10 @@
         },
         {
             "name": "ckeditor/lineutils",
-            "version": "4.4.8",
+            "version": "4.16.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip"
+                "url": "https://download.ckeditor.com/lineutils/releases/lineutils_4.16.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -32,10 +32,10 @@
         },
         {
             "name": "ckeditor/widget",
-            "version": "4.4.8",
+            "version": "4.16.1",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/widget/releases/widget_4.4.8.zip"
+                "url": "https://download.ckeditor.com/widget/releases/widget_4.16.1.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -3142,6 +3142,10 @@
                     "homepage": "https://www.drupal.org/user/255969"
                 },
                 {
+                    "name": "mlhess",
+                    "homepage": "https://www.drupal.org/user/102818"
+                },
+                {
                     "name": "webchick",
                     "homepage": "https://www.drupal.org/user/24967"
                 },
@@ -3445,6 +3449,10 @@
                 {
                     "name": "Berdir",
                     "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
                 },
                 {
                     "name": "bojanz",
@@ -7814,6 +7822,10 @@
                     "homepage": "https://www.drupal.org/user/762870"
                 },
                 {
+                    "name": "ken-g",
+                    "homepage": "https://www.drupal.org/user/2975041"
+                },
+                {
                     "name": "m.stenta",
                     "homepage": "https://www.drupal.org/user/581414"
                 },
@@ -8099,6 +8111,10 @@
                 {
                     "name": "paranojik",
                     "homepage": "https://www.drupal.org/user/19501"
+                },
+                {
+                    "name": "paulocs",
+                    "homepage": "https://www.drupal.org/user/3640109"
                 },
                 {
                     "name": "slashrsm",
@@ -10619,6 +10635,10 @@
                     "homepage": "https://www.drupal.org/user/1485048"
                 },
                 {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                },
+                {
                     "name": "peximo",
                     "homepage": "https://www.drupal.org/user/209981"
                 },
@@ -12020,32 +12040,12 @@
                     "homepage": "https://www.drupal.org/user/493050"
                 },
                 {
-                    "name": "bucefal91",
-                    "homepage": "https://www.drupal.org/user/504128"
-                },
-                {
-                    "name": "fenstrat",
-                    "homepage": "https://www.drupal.org/user/362649"
-                },
-                {
                     "name": "jrockowitz",
                     "homepage": "https://www.drupal.org/user/371407"
                 },
                 {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
-                },
-                {
                     "name": "quicksketch",
                     "homepage": "https://www.drupal.org/user/35821"
-                },
-                {
-                    "name": "sanchiz",
-                    "homepage": "https://www.drupal.org/user/1671246"
-                },
-                {
-                    "name": "tedbow",
-                    "homepage": "https://www.drupal.org/user/240860"
                 },
                 {
                     "name": "torotil",
@@ -12060,26 +12060,29 @@
         },
         {
             "name": "drupal/wysiwyg",
-            "version": "dev-2.x",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/wysiwyg.git",
-                "reference": "1f52209"
+                "reference": "7.x-2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/wysiwyg-7.x-2.7.zip",
+                "reference": "7.x-2.7",
+                "shasum": "f250622e8c21e6d6d0d3fa2d864cbb59db620724"
             },
             "require": {
                 "drupal/drupal": "~7.0"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "7.x-2.6+2-dev",
-                    "datestamp": "1584562764",
+                    "version": "7.x-2.7",
+                    "datestamp": "1622246285",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -12101,8 +12104,7 @@
             "homepage": "https://www.drupal.org/project/wysiwyg",
             "support": {
                 "source": "https://git.drupalcode.org/project/wysiwyg"
-            },
-            "time": "2020-03-18T20:14:21+00:00"
+            }
         },
         {
             "name": "drupal/xautoload",
@@ -14283,7 +14285,6 @@
         "drupal/relation_add": 20,
         "drupal/simplesamlphp_auth": 20,
         "drupal/views_datasource": 20,
-        "drupal/wysiwyg": 20,
         "jhuang0427/php-proauth": 20,
         "phayes/geophp": 20
     },
