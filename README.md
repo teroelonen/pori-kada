@@ -1,5 +1,18 @@
 # Pori project
 
+## Environment variables
+
+- `WKV_SITE_ENV` - environment name
+- `DB_PASS_DRUPAL` - database password
+- `DB_USER_DRUPAL` - database username
+- `DB_HOST_DRUPAL` - database host
+- `DB_NAME_DRUPAL` - database name
+- `WARDEN_TOKEN` - shared security token between the site and Warden server
+- `SAML_ADMINPASS` - SimpleSAML administration password
+- `SAML_SECRETSALT` - SimpleSAML salt hash
+- `XDEBUG_MODE` - Xdebug mode
+- `PHP_IDE_CONFIG` - Xdebug setting for PhpStorm
+
 ## SimpleSAML
 
 Login path: <https://pori.fi/login_ad>

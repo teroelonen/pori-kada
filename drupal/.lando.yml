@@ -29,7 +29,12 @@ services:
     overrides:
       environment:
         WKV_SITE_ENV: lando
-        SAML_MEMCACHE_STORE: memcached
+        DB_PASS_DRUPAL: drupal7
+        DB_USER_DRUPAL: drupal7
+        DB_HOST_DRUPAL: database
+        DB_NAME_DRUPAL: drupal7
+        SAML_ADMINPASS: admin-123
+        SAML_SECRETSALT: salty-cracker-1
         XDEBUG_MODE:
         PHP_IDE_CONFIG: "serverName=appserver"
   database:
