@@ -59,6 +59,10 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
+### Developer notes
+
+- Restart Docker Desktop when facing constant `COMPOSE_HTTP_TIMEOUT` errors during `lando rebuild`.
+
 ### Provisioning
 
 Perform the following tasks in the project root folder to set up the Lando-based provisioning tool:
