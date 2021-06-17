@@ -137,7 +137,7 @@
         extra_locations:
           - location: "^~ /simplesaml"
             definition: |
-              alias /var/www/pori.stage.wunder.io/current/conf/simplesaml/www;
+              alias /var/www/pori.stage.wunder.io/current/vendor/simplesamlphp/simplesamlphp/www;
               index index.php;
 
               location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
