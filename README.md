@@ -15,8 +15,8 @@
 
 ## SimpleSAML
 
-Login path: <https://pori.fi/login_ad>
-Admin path: <https://pori.fi/simplesaml>
+- Login path: <https://pori.fi/login_ad>
+- Admin path: <https://pori.fi/simplesaml>
 
 ## Local environment
 
@@ -78,8 +78,17 @@ The `develop` branch is used only for testing and must never be merged back to m
 
 ### Provisioning
 
-Perform the following tasks in the project root folder to set up the Lando-based provisioning tool:
+Perform the following tasks **in the project root folder** to set up the Lando-based provisioning tool:
 
-1. create the file `ansible.vault` and save it with Ansible vault password (`Pori ansible-vault key` in the LastPass),
-2. run `lando start`,
-3. use `lando provision` for help and `lando provision <task>` for provisioning tasks.
+1. create the `ansible.vault` file and save it with the Ansible vault password (`Pori ansible-vault key` in LastPass),
+2. run `lando start`.
+
+Usage: `lando provision [-t|s ANSIBLE_TAGS] [ENVIRONMENT]`.
+
+```sh
+ -t ANSIBLE_TAGS       Ansible tags to be provisioned.
+ -s ANSIBLE_TAGS       Ansible tags to be skipped when provisioning.
+    ENVIRONMENT        Environment to be provisioned.
+```
+
+Example of provisioning `nginx` Ansible tag in a `develop` environment: `lando provision -t nginx develop`.
