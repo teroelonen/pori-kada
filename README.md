@@ -15,8 +15,8 @@
 
 ## SimpleSAML
 
-Login path: <https://pori.fi/login_ad>
-Admin path: <https://pori.fi/simplesaml>
+- Login path: <https://pori.fi/login_ad>
+- Admin path: <https://pori.fi/simplesaml>
 
 ## Local environment
 
