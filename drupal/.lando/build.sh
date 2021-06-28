@@ -10,8 +10,6 @@ mkdir -p /app/web/sites/default/files/private
 
 # SimpleSAML configuration.
 cd /app
-cp -rf conf/simplesaml/config vendor/simplesamlphp/simplesamlphp
-cp -rf conf/simplesaml/cert vendor/simplesamlphp/simplesamlphp
 # https://simplesamlphp.org/docs/stable/metarefresh:simplesamlphp-automated_metadata
 echo >"vendor/simplesamlphp/simplesamlphp/modules/cron/enable"
 echo >"vendor/simplesamlphp/simplesamlphp/modules/metarefresh/enable"
