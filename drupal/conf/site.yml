@@ -80,8 +80,6 @@ develop:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/simplesaml/config: vendor/simplesamlphp/simplesamlphp/config
-    - conf/simplesaml/cert: vendor/simplesamlphp/simplesamlphp/cert
 
   local_commands:
     build:
