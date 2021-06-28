@@ -145,7 +145,7 @@ class ScriptHandler {
 
     // Copy _ping.php to drupalRoot.
     $fs->copy($composerRoot . '/conf/_ping.php', $drupalRoot . '/_ping.php');
-    // Cpoy SimpleSAML config files.
+    // Copy SimpleSAML config files.
     $fs->mirror($composerRoot . '/conf/simplesaml/config', $composerRoot . '/vendor/simplesamlphp/simplesamlphp/config');
     $fs->mirror($composerRoot . '/conf/simplesaml/cert', $composerRoot . '/vendor/simplesamlphp/simplesamlphp/cert');
   }

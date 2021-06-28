@@ -98,7 +98,7 @@ switch ($env) {
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
       $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
-      $conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/conf/simplesaml';
+      $conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/vendor/simplesamlphp/simplesamlphp';
       // Cache clear strategy:
       // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
       $conf['varnish_cache_clear'] = "0";
