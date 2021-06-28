@@ -14,7 +14,6 @@ dependencies[] = ds
 dependencies[] = elysia_cron
 dependencies[] = entity_action_log
 dependencies[] = entityreference
-dependencies[] = eu_cookie_compliance
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = field_permissions
