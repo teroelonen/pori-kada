@@ -80,15 +80,17 @@ develop:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml/config: vendor/simplesamlphp/simplesamlphp
+    - conf/simplesaml/cert: vendor/simplesamlphp/simplesamlphp
 
   local_commands:
     build:
       - shell: chmod -R a+w web
       - make
-      - shell: touch conf/simplesaml/modules/cron/enable
-      - shell: touch conf/simplesaml/modules/metarefresh/enable
-      - shell: php conf/simplesaml/modules/cron/bin/cron.php -t hourly
-      - shell: sudo chown -R www-admin:www-admin conf/simplesaml/metadata/metarefresh-pori
+      - shell: touch vendor/simplesamlphp/simplesamlphp/modules/cron/enable
+      - shell: touch vendor/simplesamlphp/simplesamlphp/modules/metarefresh/enable
+      - shell: php vendor/simplesamlphp/simplesamlphp/modules/cron/bin/cron.php -t hourly
+      - shell: sudo chown -R www-admin:www-admin vendor/simplesamlphp/simplesamlphp/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
