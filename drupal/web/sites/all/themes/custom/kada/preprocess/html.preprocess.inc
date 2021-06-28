@@ -15,7 +15,7 @@ function kada_preprocess_html(&$variables) {
       $variables['cookiebot_footer'] = '<script id="CookieDeclaration" src="https://consent.cookiebot.com/a64f5e13-0c70-4d9d-bd65-64adff59bc3d/cd.js" type="text/javascript" async></script>';
       break;
     case 'pori_fi':
-      $variables['cookiebot_head'] = '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="a90764a52-430d-45db-ae4c-3202141c8d0a" type="text/javascript" data-blockingmode="auto"></script>';
+      $variables['cookiebot_head'] = '<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="90764a52-430d-45db-ae4c-3202141c8d0a" type="text/javascript" data-blockingmode="auto"></script>';
       $variables['cookiebot_footer'] = '<script id="CookieDeclaration" src="https://consent.cookiebot.com/90764a52-430d-45db-ae4c-3202141c8d0a/cd.js" type="text/javascript" async></script>';
       break;
     case 'visitpori_fi':
