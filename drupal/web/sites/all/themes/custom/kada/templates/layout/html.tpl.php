@@ -54,7 +54,7 @@
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
   <head>
-    <?php print $head; ?>
+    <?php print $cookiebot_head . $head; ?>
     <title><?php print $head_title; ?></title>
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
@@ -76,18 +76,10 @@
     <?php print $scripts; ?>
   </head>
   <body<?php print $attributes;?>>
-    <script type="text/javascript">
-      var _kiq = _kiq || [];
-      (function(){
-        setTimeout(function(){
-        var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
-        s.async = true; s.src = '//s3.amazonaws.com/ki.js/58607/d3v.js'; f.parentNode.insertBefore(s, f);
-        }, 1);
-      })();
-    </script>
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+    <?php print $cookiebot_footer; ?>
   </body>
 </html>
