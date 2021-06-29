@@ -89,7 +89,6 @@ develop:
       - shell: touch vendor/simplesamlphp/simplesamlphp/modules/metarefresh/enable
       - shell: php vendor/simplesamlphp/simplesamlphp/modules/cron/bin/cron.php -t hourly
       - shell: sudo chown -R www-admin:www-admin vendor/simplesamlphp/simplesamlphp/metadata/metarefresh-pori
-      - shell: chmod -R a+w vendor/simplesamlphp/simplesamlphp/metadata/metarefresh-pori
       # - shell: chmod -R a-w web
 
     update:
