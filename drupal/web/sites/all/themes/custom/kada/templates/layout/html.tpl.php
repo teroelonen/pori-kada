@@ -54,7 +54,7 @@
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
   <head>
-    <?php print $head; ?>
+    <?php print $cookiebot_head . $head; ?>
     <title><?php print $head_title; ?></title>
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
