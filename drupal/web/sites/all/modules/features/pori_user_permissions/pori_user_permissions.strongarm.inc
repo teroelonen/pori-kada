@@ -78,7 +78,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_installdir';
-  $strongarm->value = '/var/www/pori.dev.wunder.io/current/conf/simplesaml';
+  $strongarm->value = '/var/www/pori.dev.wunder.io/current/vendor/simplesamlphp/simplesamlphp';
   $export['simplesamlphp_auth_installdir'] = $strongarm;
 
   $strongarm = new stdClass();

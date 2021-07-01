@@ -1,9 +1,22 @@
 # Pori project
 
+## Environment variables
+
+- `WKV_SITE_ENV` - environment name
+- `DB_PASS_DRUPAL` - database password
+- `DB_USER_DRUPAL` - database username
+- `DB_HOST_DRUPAL` - database host
+- `DB_NAME_DRUPAL` - database name
+- `WARDEN_TOKEN` - shared security token between the site and Warden server
+- `SAML_ADMINPASS` - SimpleSAML administration password
+- `SAML_SECRETSALT` - SimpleSAML salt hash
+- `XDEBUG_MODE` - Xdebug mode
+- `PHP_IDE_CONFIG` - Xdebug setting for PhpStorm
+
 ## SimpleSAML
 
-Login path: <https://pori.fi/login_ad>
-Admin path: <https://pori.fi/simplesaml>
+- Login path: <https://pori.fi/login_ad>
+- Admin path: <https://pori.fi/simplesaml>
 
 ## Local environment
 
@@ -59,10 +72,23 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
+### Developer notes
+
+- Restart Docker Desktop when facing constant `COMPOSE_HTTP_TIMEOUT` errors during `lando rebuild`.
+
 ### Provisioning
 
-Perform the following tasks in the project root folder to set up the Lando-based provisioning tool:
+Perform the following tasks **in the project root folder** to set up the Lando-based provisioning tool:
 
-1. create the file `ansible.vault` and save it with Ansible vault password (`Pori ansible-vault key` in the LastPass),
-2. run `lando start`,
-3. use `lando provision` for help and `lando provision <task>` for provisioning tasks.
+1. create the `ansible.vault` file and save it with the Ansible vault password (`Pori ansible-vault key` in LastPass),
+2. run `lando start`.
+
+Usage: `lando provision [-t|s ANSIBLE_TAGS] [ENVIRONMENT]`.
+
+```sh
+ -t ANSIBLE_TAGS       Ansible tags to be provisioned.
+ -s ANSIBLE_TAGS       Ansible tags to be skipped when provisioning.
+    ENVIRONMENT        Environment to be provisioned.
+```
+
+Example of provisioning `nginx` Ansible tag in a `develop` environment: `lando provision -t nginx develop`.

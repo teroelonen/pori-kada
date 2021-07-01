@@ -9,10 +9,17 @@ if (!ini_get('session.save_handler')) {
 }
 
 if (empty($_SERVER['HTTP_HOST'])) {
-  $host = 'www.pori.fi';  
+  $host = 'www.pori.fi';
 }
 else {
   $host = $_SERVER['HTTP_HOST'];
+}
+
+if (getenv('LANDO_INFO')) {
+  $memcache_server = 'memcached';
+}
+else {
+  $memcache_server = 'localhost';
 }
 
 $config = array(
@@ -641,7 +648,7 @@ $config = array(
      */
     'memcache_store.servers' => array(
         array(
-            array('hostname' => 'localhost'),
+            array('hostname' => $memcache_server),
         ),
     ),
 
@@ -713,7 +720,7 @@ $config = array(
      * Languages available, RTL languages, and what language is the default.
      */
     'language.available' => array(
-        'en', 'no', 'nn', 'se', 'da', 'de', 'sv', 'fi', 'es', 'ca', 'fr', 'it', 'nl', 'lb', 
+        'en', 'no', 'nn', 'se', 'da', 'de', 'sv', 'fi', 'es', 'ca', 'fr', 'it', 'nl', 'lb',
         'cs', 'sl', 'lt', 'hr', 'hu', 'pl', 'pt', 'pt-br', 'tr', 'ja', 'zh', 'zh-tw', 'ru',
         'et', 'he', 'id', 'sr', 'lv', 'ro', 'eu', 'el', 'af'
     ),

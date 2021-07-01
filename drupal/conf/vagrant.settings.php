@@ -63,7 +63,7 @@ $conf['preprocess_css'] = false;
 $conf['preprocess_js'] = false;
 $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
 $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
-$conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/conf/simplesaml';
+$conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/vendor/simplesamlphp/simplesamlphp';
 
 
 // Override search API server settings fetched from default configuration.

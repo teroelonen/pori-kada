@@ -133,10 +133,10 @@ class ScriptHandler {
     }
   }
 
-    /**
-   * Set up _ping.php instance.
+  /**
+   * Copy configuration files.
    */
-  public static function setupPing(Event $event) {
+  public static function copyConfig(Event $event) {
     $fs = new Filesystem();
     $drupalFinder = new DrupalFinder();
     $drupalFinder->locateRoot(getcwd());
@@ -145,5 +145,8 @@ class ScriptHandler {
 
     // Copy _ping.php to drupalRoot.
     $fs->copy($composerRoot . '/conf/_ping.php', $drupalRoot . '/_ping.php');
+    // Copy SimpleSAML config files.
+    $fs->mirror($composerRoot . '/conf/simplesaml/config', $composerRoot . '/vendor/simplesamlphp/simplesamlphp/config');
+    $fs->mirror($composerRoot . '/conf/simplesaml/cert', $composerRoot . '/vendor/simplesamlphp/simplesamlphp/cert');
   }
 }

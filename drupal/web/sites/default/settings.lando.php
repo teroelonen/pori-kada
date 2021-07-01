@@ -87,9 +87,3 @@ if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
 define('DOMAIN_SPACE', "pori.lndo.site");
 
 $conf['menu_override_parent_selector'] = true;
-
-// SimpleSAMLphp_auth paths
-// $conf['simplesamlphp_auth_login_path'] = 'login';
-// $conf['simplesamlphp_auth_installdir'] = '/conf/simplesaml';
-
-// $conf['simplesamlphp_auth_installdir'] = '/app/conf/simplesaml';
