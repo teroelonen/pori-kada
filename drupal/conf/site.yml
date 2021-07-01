@@ -87,8 +87,9 @@ develop:
       - make
       - shell: touch vendor/simplesamlphp/simplesamlphp/modules/cron/enable
       - shell: touch vendor/simplesamlphp/simplesamlphp/modules/metarefresh/enable
-      # - shell: php vendor/simplesamlphp/simplesamlphp/modules/cron/bin/cron.php -t hourly
+      - shell: php vendor/simplesamlphp/simplesamlphp/modules/cron/bin/cron.php -t hourly
       - shell: sudo chown -R www-admin:www-admin vendor/simplesamlphp/simplesamlphp/metadata/metarefresh-pori
+      - shell: chmod -R a+w vendor/simplesamlphp/simplesamlphp/metadata
       # - shell: chmod -R a-w web
 
     update:
@@ -101,12 +102,12 @@ develop:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: chmod -R a+w vendor/simplesamlphp/simplesamlphp/metadata
       - shell: chmod -R a+x web/sites/all/libraries/ckeditor
       - shell: touch vendor/simplesamlphp/simplesamlphp/modules/cron/enable
       - shell: touch vendor/simplesamlphp/simplesamlphp/modules/metarefresh/enable
       - shell: php vendor/simplesamlphp/simplesamlphp/modules/cron/bin/cron.php -t hourly
       - shell: sudo chown -R www-admin:www-admin vendor/simplesamlphp/simplesamlphp/metadata/metarefresh-pori
+      - shell: chmod -R a+w vendor/simplesamlphp/simplesamlphp/metadata
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
