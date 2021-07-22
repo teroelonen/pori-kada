@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1417000581aeda0e601e87da1b12876b",
+    "content-hash": "6f81c6f840c768cd94cc0a9d542fe29a",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -3064,23 +3064,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.80.0",
+            "version": "7.82.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.80"
+                "reference": "7.82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.80.zip",
-                "reference": "7.80",
-                "shasum": "a3bc28036b43ec44deda643182bcdc3e4c28aff0"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.82.zip",
+                "reference": "7.82",
+                "shasum": "a51bba09bc194c712fa1fcd349d1bc52a5c9998f"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.80",
-                    "datestamp": "1619022873",
+                    "version": "7.82",
+                    "datestamp": "1626885234",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3088,7 +3088,6 @@
                 },
                 "patches_applied": {
                     "Enter drupal/drupal patch #995156 description here": "https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch",
-                    "Enter drupal/drupal patch #1018614 description here": "https://www.drupal.org/files/drupal-menu_navigation_links-1018614-83.patch",
                     "Enter drupal/drupal patch #2 description here": "https://www.drupal.org/files/issues/image_derivatives-1109312-200.patch"
                 }
             },
