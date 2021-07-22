@@ -242,7 +242,7 @@
         "drupal/domain_views": "1.x-dev",
         "drupal/domaincontext": "^1.0",
         "drupal/domains_metatag": "^1.1",
-        "drupal/drupal": "^7.80",
+        "drupal/drupal": "^7.82",
         "drupal/ds": "^2.16",
         "drupal/eck": "2.x-dev",
         "drupal/elysia_cron": "^2.7",
@@ -455,7 +455,6 @@
             },
             "drupal/drupal": {
                 "Enter drupal/drupal patch #995156 description here": "https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch",
-                "Enter drupal/drupal patch #1018614 description here": "https://www.drupal.org/files/drupal-menu_navigation_links-1018614-83.patch",
                 "Enter drupal/drupal patch #2 description here": "https://www.drupal.org/files/issues/image_derivatives-1109312-200.patch"
             },
             "drupal/plupload_lib": {
